@@ -8,4 +8,4 @@ https://www.youtube.com/watch?v=kdvPyrwKYos
 https://www.codeproject.com/Articles/751447/Learn-Microsoft-Business-intelligence-step-by-step
 
 ### Stermodel
-![Stermodel](/stermodel.png)
+![Stermodel](/Stermodel_BI.png)
