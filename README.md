@@ -7,5 +7,7 @@ https://www.youtube.com/watch?v=kdvPyrwKYos
 
 https://www.codeproject.com/Articles/751447/Learn-Microsoft-Business-intelligence-step-by-step
 
+http://stackoverflow.com/questions/6956409/ssis-reading-multiple-xml-files-from-folder
+
 ### Stermodel
 ![Stermodel](/Stermodel_BI.png)
