@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DashboardCase", "DashboardCase\DashboardCase.dwproj", "{E41DCE03-2032-4B8B-8D63-6E4168C6D152}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E41DCE03-2032-4B8B-8D63-6E4168C6D152}.Development|Default.ActiveCfg = Development
+		{E41DCE03-2032-4B8B-8D63-6E4168C6D152}.Development|Default.Build.0 = Development
+		{E41DCE03-2032-4B8B-8D63-6E4168C6D152}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
