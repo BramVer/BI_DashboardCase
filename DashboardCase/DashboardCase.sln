@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "DashboardCase", "DashboardCase\DashboardCase.dtproj", "{797701A3-A8D8-4807-812A-8D1A1606417C}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DashboardCase_AnalysisServices", "DashboardCase_AnalysisServices\DashboardCase_AnalysisServices.dwproj", "{6678DA70-2B16-42DF-ACD4-6C1B4BD5323B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -12,6 +14,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{797701A3-A8D8-4807-812A-8D1A1606417C}.Development|Default.ActiveCfg = Development
 		{797701A3-A8D8-4807-812A-8D1A1606417C}.Development|Default.Build.0 = Development
+		{6678DA70-2B16-42DF-ACD4-6C1B4BD5323B}.Development|Default.ActiveCfg = Development
+		{6678DA70-2B16-42DF-ACD4-6C1B4BD5323B}.Development|Default.Build.0 = Development
+		{6678DA70-2B16-42DF-ACD4-6C1B4BD5323B}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

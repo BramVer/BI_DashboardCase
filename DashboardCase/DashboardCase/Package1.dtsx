@@ -11,10 +11,145 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{11B577AC-0C22-48DC-BEDD-73B5D1D6BEC8}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{88DF9B3F-A8D6-410D-B3F4-1DF94A3C9215}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{E356FCAF-3858-44BA-BEAF-47BC0D23C85B}"
+      DTS:ObjectName="DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-JEOL8PT\SACHA_SQLSERVER;Initial Catalog=Dashboards;Integrated Security=True;Application Name=SSIS-Package1-{E356FCAF-3858-44BA-BEAF-47BC0D23C85B}DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1CFC1794-8217-435B-8224-3A08A516B163}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sacha\it\sql\BI_DashboardCase\errorlog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wagen_Id"
+              DTS:DTSID="{18BFF8A3-C2E9-44CB-BC9F-16C5E5738DE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mixnummer"
+              DTS:DTSID="{7DDF4F3D-AD41-47F4-B2C2-657AFC9760A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mixmoment"
+              DTS:DTSID="{487F2A08-2B99-4664-BF9E-5B9D412A5CD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WagenType"
+              DTS:DTSID="{E1B7C21B-A966-4876-BA59-69BE25B55719}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Uitvoering"
+              DTS:DTSID="{4E9BBE56-8431-43A3-93BF-7BB07087B191}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Motor"
+              DTS:DTSID="{30343E9E-73BC-4088-81E7-F40092F7E8D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Kleur"
+              DTS:DTSID="{2E8DCAC2-A28C-4A1A-A87B-941F4BB9DEA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bekleding"
+              DTS:DTSID="{B9AF4A8C-0075-47FF-AC80-7462D10EBDDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KleurInterieur"
+              DTS:DTSID="{9A20838E-5A65-451D-9E25-461ACB631F98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Maatsysteem"
+              DTS:DTSID="{30CD81B0-ACD5-4ABA-BC75-1BA912F0F84A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taal"
+              DTS:DTSID="{E23475A3-CBCC-44A6-B747-B5CDA5EEA097}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{E1597278-BE4D-4345-9368-02C93C1287BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{7027B3F6-6D13-4B9A-B3A6-43A6E1EBD335}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -84,6 +219,7 @@
           DTS:DTSID="{22E62780-93D6-49C0-AC00-9BFD09A34FC5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
+          DTS:MaxErrorCount="2147483647"
           DTS:ObjectName="Data Flow Task"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
@@ -92,202 +228,428 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
-                  componentClassID="Microsoft.OLEDBDestination"
-                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-                  description="OLE DB Destination"
-                  name="OLE DB Destination"
+                  refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="ADO NET Destination Auto Samenstelling"
                   usesDispositions="true"
-                  version="4">
+                  version="2">
                   <properties>
                     <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
                       dataType="System.String"
-                      description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Wagen]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the variable that contains the name of the database object used to open a rowset."
-                      name="OpenRowsetVariable"></property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."AutoSamenstelling"</property>
                     <property
                       dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
                     <property
                       dataType="System.Boolean"
-                      description="Forces the use of the DefaultCodePage property value when describing character data."
-                      name="AlwaysUseDefaultCodePage">false</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the mode used to access the database."
-                      name="AccessMode"
-                      typeConverter="AccessMode">3</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepIdentity">false</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                      name="FastLoadKeepNulls">false</property>
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
                     <property
                       dataType="System.String"
-                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="{63932EC4-53BB-430A-BE9E-226730D93FFA}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JEOL8PT_SACHA_SQLSERVER.Dashboards]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                      errorOrTruncationOperation="Insert"
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input]"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
-                      name="OLE DB Destination Input">
+                      name="ADO NET Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mixnummer]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input].Columns[Mixnummer]"
                           cachedDataType="ui4"
                           cachedName="Mixnummer"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixnummer]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input].ExternalColumns[Mixnummer]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input].ExternalColumns[Mixnummer]"
+                          dataType="i8"
+                          name="Mixnummer" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input].ExternalColumns[Stuknummer]"
+                          dataType="wstr"
+                          length="10"
+                          name="Stuknummer" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input].ExternalColumns[Aantal]"
+                          dataType="i4"
+                          name="Aantal" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="ADO NET Destination Onderdelen"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Onderdelen"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mixmoment]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="Mixmoment"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixmoment]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixmoment]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WagenType]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].Columns[WagenType]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="WagenType"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WagenType]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[WagenType]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[WagenType]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Uitvoering]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Uitvoering"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uitvoering]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Uitvoering]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Motor]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Motor"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Motor]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Motor]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Kleur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].Columns[Kleur]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Kleur"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kleur]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Kleur]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Kleur]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Bekleding]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Bekleding"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bekleding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Bekleding]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KleurInterieur]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="KleurInterieur"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KleurInterieur]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[KleurInterieur]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Maatsysteem]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].Columns[Maatsysteem]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Maatsysteem"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maatsysteem]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Maatsysteem]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Maatsysteem]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Taal]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].Columns[Taal]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Taal"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taal]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Taal]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Taal]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixnummer]"
-                          dataType="i8"
-                          name="Mixnummer" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Stuknummer]"
+                          dataType="wstr"
+                          length="10"
+                          name="Stuknummer" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixmoment]"
-                          dataType="dbTimeStamp"
-                          name="Mixmoment" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Naam]"
+                          dataType="wstr"
+                          length="50"
+                          name="Naam" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WagenType]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Omschrijving]"
+                          dataType="wstr"
+                          length="200"
+                          name="Omschrijving" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Categorie]"
+                          dataType="wstr"
+                          length="20"
+                          name="Categorie" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[WagenType]"
+                          dataType="wstr"
                           length="5"
                           name="WagenType" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uitvoering]"
-                          codePage="1252"
-                          dataType="str"
-                          length="20"
-                          name="Uitvoering" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Motor]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Motor" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kleur]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Kleur]"
+                          dataType="wstr"
                           length="10"
                           name="Kleur" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bekleding]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Bekleding" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KleurInterieur]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="KleurInterieur" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maatsysteem]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Maatsysteem]"
+                          dataType="wstr"
                           length="10"
                           name="Maatsysteem" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taal]"
-                          codePage="1252"
-                          dataType="str"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Taal]"
+                          dataType="wstr"
+                          length="20"
+                          name="Taal" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[StocklocatieRange]"
+                          dataType="i4"
+                          name="StocklocatieRange" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input].ExternalColumns[Stukprijs]"
+                          dataType="numeric"
+                          name="Stukprijs"
+                          precision="19"
+                          scale="255" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="ADO NET Destination Wagen"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Wagen"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="RedirectRow"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Mixnummer]"
+                          cachedDataType="ui4"
+                          cachedName="Mixnummer"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Mixmoment]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Mixmoment"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixmoment]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[WagenType]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="WagenType"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[WagenType]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[WagenType]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Uitvoering]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Uitvoering"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Uitvoering]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Uitvoering]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Motor]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Motor"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Motor]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Motor]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Kleur]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Kleur"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Kleur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Kleur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Bekleding]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Bekleding"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Bekleding]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Bekleding]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[KleurInterieur]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="KleurInterieur"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[KleurInterieur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[KleurInterieur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Maatsysteem]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Maatsysteem"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Maatsysteem]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Maatsysteem]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].Columns[Taal]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Taal"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Taal]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Taal]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Mixnummer]"
+                          dataType="i8"
+                          name="Mixnummer" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Mixmoment]"
+                          dataType="dbTimeStamp"
+                          name="Mixmoment" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[WagenType]"
+                          dataType="wstr"
+                          length="5"
+                          name="WagenType" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Uitvoering]"
+                          dataType="wstr"
+                          length="20"
+                          name="Uitvoering" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Motor]"
+                          dataType="wstr"
+                          length="10"
+                          name="Motor" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Kleur]"
+                          dataType="wstr"
+                          length="10"
+                          name="Kleur" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Bekleding]"
+                          dataType="wstr"
+                          length="10"
+                          name="Bekleding" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[KleurInterieur]"
+                          dataType="wstr"
+                          length="10"
+                          name="KleurInterieur" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Maatsysteem]"
+                          dataType="wstr"
+                          length="10"
+                          name="Maatsysteem" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input].ExternalColumns[Taal]"
+                          dataType="wstr"
                           length="10"
                           name="Taal" />
                       </externalMetadataColumns>
@@ -295,28 +657,583 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Outputs[ADO NET Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
-                      name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
                   </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion DT-UI4 -&gt; DT-UI8"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Inputs[Data Conversion Input].Columns[Mixnummer]"
+                          cachedDataType="ui4"
+                          cachedName="Mixnummer"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Output].Columns[Copy of Mixnummer]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Output].Columns[Copy of Mixnummer]"
+                          name="Copy of Mixnummer"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion DTN-TEXT -&gt; DT-TEXT"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Wagen_Id]"
+                          cachedDataType="nText"
+                          cachedName="Wagen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Wagen_Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Mixnummer]"
+                          cachedDataType="nText"
+                          cachedName="Mixnummer"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixnummer]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Mixmoment]"
+                          cachedDataType="nText"
+                          cachedName="Mixmoment"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixmoment]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[WagenType]"
+                          cachedDataType="nText"
+                          cachedName="WagenType"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[WagenType]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Uitvoering]"
+                          cachedDataType="nText"
+                          cachedName="Uitvoering"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Uitvoering]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Motor]"
+                          cachedDataType="nText"
+                          cachedName="Motor"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Motor]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Kleur]"
+                          cachedDataType="nText"
+                          cachedName="Kleur"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Kleur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Bekleding]"
+                          cachedDataType="nText"
+                          cachedName="Bekleding"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Bekleding]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[KleurInterieur]"
+                          cachedDataType="nText"
+                          cachedName="KleurInterieur"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[KleurInterieur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Maatsysteem]"
+                          cachedDataType="nText"
+                          cachedName="Maatsysteem"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Maatsysteem]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[Taal]"
+                          cachedDataType="nText"
+                          cachedName="Taal"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Taal]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Wagen_Id]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Wagen_Id]"
+                          name="Copy of Wagen_Id"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Wagen_Id]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Mixnummer]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Mixnummer]"
+                          name="Copy of Mixnummer"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixnummer]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Mixmoment]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Mixmoment]"
+                          name="Copy of Mixmoment"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixmoment]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of WagenType]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of WagenType]"
+                          name="Copy of WagenType"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[WagenType]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Uitvoering]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Uitvoering]"
+                          name="Copy of Uitvoering"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Uitvoering]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Motor]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Motor]"
+                          name="Copy of Motor"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Motor]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Kleur]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Kleur]"
+                          name="Copy of Kleur"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Kleur]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Bekleding]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Bekleding]"
+                          name="Copy of Bekleding"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Bekleding]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of KleurInterieur]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of KleurInterieur]"
+                          name="Copy of KleurInterieur"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[KleurInterieur]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Maatsysteem]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Maatsysteem]"
+                          name="Copy of Maatsysteem"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Maatsysteem]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Taal]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of Taal]"
+                          name="Copy of Taal"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Taal]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of ErrorCode]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of ErrorCode]"
+                          name="Copy of ErrorCode"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorCode]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of ErrorColumn]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="RedirectRow"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Output].Columns[Copy of ErrorColumn]"
+                          name="Copy of ErrorColumn"
+                          truncationRowDisposition="RedirectRow">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorColumn]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 3]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 4]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 4"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Raw File Destination"
+                  componentClassID="Microsoft.RawDestination"
+                  contactInfo="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers.;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers."
+                  name="Raw File Destination"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the file."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Output file name"
+                      name="FileName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.NonValidatingFileNameEditor">C:\Users\sacha\it\sql\BI_DashboardCase\errorlog</property>
+                    <property
+                      dataType="System.Null"
+                      description="Name of the variable that contains the file name"
+                      name="FileNameVariable" />
+                    <property
+                      dataType="System.Int32"
+                      description="Indicates what option is used to write to the file."
+                      name="WriteOption"
+                      typeConverter="WriteOption">0</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Raw File Destination.Inputs[Raw File Destination Input]"
+                      hasSideEffects="true"
+                      name="Raw File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Raw File Destination.Inputs[Raw File Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Raw File Destination.Inputs[Raw File Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
                 </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Union All"
@@ -512,10 +1429,10 @@
                       <externalMetadataColumns />
                     </input>
                     <input
-                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 4]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 5]"
                       dangling="true"
                       hasSideEffects="true"
-                      name="Union All Input 4">
+                      name="Union All Input 5">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -648,21 +1565,21 @@
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Categorie]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].ExternalColumns[Categorie]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Categorie]"
                           name="Categorie"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Onderdelen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Onderdelen_Id]"
                           name="Onderdelen_Id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -751,20 +1668,20 @@
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Onderdelen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Onderdelen_Id]"
                           name="Onderdelen_Id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Wagen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Wagen_Id]"
                           name="Wagen_Id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -852,109 +1769,109 @@
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Wagen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Wagen_Id]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Wagen_Id]"
                           name="Wagen_Id"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixnummer]"
                           dataType="ui4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Mixnummer]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixnummer]"
                           name="Mixnummer"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixmoment]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Mixmoment]"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixmoment]"
                           name="Mixmoment"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[WagenType]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[WagenType]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[WagenType]"
                           name="WagenType"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Uitvoering]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Uitvoering]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Uitvoering]"
                           name="Uitvoering"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Motor]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Motor]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Motor]"
                           name="Motor"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Kleur]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Kleur]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Kleur]"
                           name="Kleur"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Bekleding]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Bekleding]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Bekleding]"
                           name="Bekleding"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[KleurInterieur]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[KleurInterieur]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[KleurInterieur]"
                           name="KleurInterieur"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Maatsysteem]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Maatsysteem]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Maatsysteem]"
                           name="Maatsysteem"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                         <outputColumn
                           refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Taal]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Taal]"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Taal]"
                           name="Taal"
-                          truncationRowDisposition="FailComponent" />
+                          truncationRowDisposition="RedirectRow" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1221,6 +2138,31 @@
               </components>
               <paths>
                 <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Error Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Raw File Destination.Inputs[Raw File Destination Input]"
+                  name="Data Conversion Error Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Outputs[Data Conversion Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  name="Data Conversion Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 1]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen.Inputs[ADO NET Destination Input]"
+                  name="Multicast Output 1"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 2]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen.Inputs[ADO NET Destination Input]"
+                  name="Multicast Output 2"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 3]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling.Inputs[ADO NET Destination Input]"
+                  name="Multicast Output 3"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Multicast.Outputs[Multicast Output 3]" />
+                <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
                   endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 2]"
                   name="Onderdeel"
@@ -1232,7 +2174,7 @@
                   startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8.Inputs[Data Conversion Input]"
                   name="Union All Output 1"
                   startId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1]" />
                 <path
@@ -1240,6 +2182,11 @@
                   endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1]"
                   name="Wagen"
                   startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen Error Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT.Inputs[Data Conversion Input]"
+                  name="Wagen Error Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1285,105 +2232,337 @@
     design-time-name="Package\Foreach Loop Container\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="134,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\XML Source"
-          TopLeft="133,154" />
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Multicast"
+          TopLeft="741,451.857142857143" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
-          TopLeft="114,376" />
-        <NodeLayout
-          Size="121,42"
+          Size="639,42"
           Id="Package\Foreach Loop Container\Data Flow Task\Union All"
-          TopLeft="141,273" />
+          TopLeft="461,304" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen"
+          TopLeft="458,596.571428571429" />
+        <NodeLayout
+          Size="656,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source"
+          TopLeft="454,95" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Data Conversion DTN-TEXT -&gt; DT-TEXT"
+          TopLeft="1020,171" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Raw File Destination"
+          TopLeft="1029,256" />
+        <NodeLayout
+          Size="273,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling"
+          TopLeft="1011.42857142857,585.285714285714" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen"
+          TopLeft="717.857142857143,590" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
-          TopLeft="200.75,196">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen Error Output]"
+          TopLeft="890,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="264.5,34"
               Start="0,0"
-              End="0,69.5">
+              End="264.5,26.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,9.64963503649635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.64963503649635"
+                    Point2="0,13.6496350364963"
+                    Point3="4,13.6496350364963" />
+                  <mssgle:LineSegment
+                    End="260.5,13.6496350364963" />
+                  <mssgle:CubicBezierSegment
+                    Point1="260.5,13.6496350364963"
+                    Point2="264.5,13.6496350364963"
+                    Point3="264.5,17.6496350364963" />
+                  <mssgle:LineSegment
+                    End="264.5,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.942109375,29.08203125,31.88421875,11.3359375"
+              BoundingBox="86.7234375,18.6496350364963,91.053125,11.4873046875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
-          TopLeft="149,196">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
+          TopLeft="499.25,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="0,167"
               Start="0,0"
-              End="0,69.5">
+              End="0,159.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,159.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-23.1896484375,29.87548828125,46.379296875,9.7490234375"
+              BoundingBox="-15.942109375,74.08203125,31.88421875,11.3359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
-          TopLeft="254,196">
+          TopLeft="568.25,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="0,167"
               Start="0,0"
-              End="0,69.5">
+              End="0,159.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,159.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-26.009453125,29.87548828125,52.01890625,9.7490234375"
+              BoundingBox="-26.009453125,74.87548828125,52.01890625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="200.5,315">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
+          TopLeft="643.25,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,167"
               Start="0,0"
-              End="0,53.5">
+              End="0,159.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,159.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.1896484375,74.87548828125,46.379296875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 3]"
+          TopLeft="829,493.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="318.928571428571,91.4285714285715"
+              Start="0,0"
+              End="318.928571428571,83.9285714285715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.8012422360249" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.8012422360249"
+                    Point2="0,31.8012422360249"
+                    Point3="4,31.8012422360249" />
+                  <mssgle:LineSegment
+                    End="314.928571428571,31.8012422360249" />
+                  <mssgle:CubicBezierSegment
+                    Point1="314.928571428571,31.8012422360249"
+                    Point2="318.928571428571,31.8012422360249"
+                    Point3="318.928571428571,35.8012422360249" />
+                  <mssgle:LineSegment
+                    End="318.928571428571,83.9285714285715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 2]"
+          TopLeft="801,493.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.3571428571429,96.1428571428572"
+              Start="0,0"
+              End="35.3571428571429,88.6428571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.0714285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.0714285714286"
+                    Point2="0,48.0714285714286"
+                    Point3="4,48.0714285714286" />
+                  <mssgle:LineSegment
+                    End="31.3571428571429,48.0714285714286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.3571428571429,48.0714285714286"
+                    Point2="35.3571428571429,48.0714285714286"
+                    Point3="35.3571428571429,52.0714285714286" />
+                  <mssgle:LineSegment
+                    End="35.3571428571429,88.6428571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 1]"
+          TopLeft="773,493.857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-207.5,102.714285714286"
+              Start="0,0"
+              End="-207.5,95.2142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7267080745342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7267080745342"
+                    Point2="0,35.7267080745342"
+                    Point3="-4,35.7267080745342" />
+                  <mssgle:LineSegment
+                    End="-203.5,35.7267080745342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-203.5,35.7267080745342"
+                    Point2="-207.5,35.7267080745342"
+                    Point3="-207.5,39.7267080745342" />
+                  <mssgle:LineSegment
+                    End="-207.5,95.2142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Error Output]"
+          TopLeft="1154.5,213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38,43"
+              Start="0,0"
+              End="-38,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="-4,21.5" />
+                  <mssgle:LineSegment
+                    End="-34,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34,21.5"
+                    Point2="-38,21.5"
+                    Point3="-38,25.5" />
+                  <mssgle:LineSegment
+                    End="-38,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.08638671875,26.5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Data Conversion DT-UI4 -&gt; DT-UI8"
+          TopLeft="659.285714285714,376.142857142857" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="781.392857142857,346">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.1428571428572"
+              Start="0,0"
+              End="0,22.6428571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6428571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="782.285714285714,418.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7142857142858,33.7142857142857"
+              Start="0,0"
+              End="18.7142857142858,26.2142857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.8571428571428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8571428571428"
+                    Point2="0,16.8571428571428"
+                    Point3="4,16.8571428571428" />
+                  <mssgle:LineSegment
+                    End="14.7142857142858,16.8571428571428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7142857142858,16.8571428571428"
+                    Point2="18.7142857142858,16.8571428571428"
+                    Point3="18.7142857142858,20.8571428571428" />
+                  <mssgle:LineSegment
+                    End="18.7142857142858,26.2142857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1396,15 +2575,26 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Wagen">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Auto Samenstelling">
+    <Properties>
       <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\ADO NET Destination Onderdelen">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
