@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-JEOL8PT</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9U1p9PT1bkW8dRWVuiM/5QAAAAACAAAAAAAQZgAAAAEAACAAAACQHQoUfsUHRkwPAT89Diyg2YPGCEbuPIupLE7eZGVrPQAAAAAOgAAAAAIAACAAAAAvzqTz6wWF0gn1oDEEqtKBfc+Cb41R57Smjpl1ZXE/SJAAAAB6KiFNeO2ZCaFT2AA6m3SPimBLlVfmHcLabzXvE8kKUpv6oiTuYAsxXQZ2Uxcc5BYHCVJmbwdURa87YdtCFyEqWZG0EszQ9lJpxj7qxVZ1N5912GHw9o8lZvhtDOMX3FAPL/gC3LEZPnthBL0iBR/G5Zs8hE6SwvkOBqrxS8KRnGwrkof2o4mg9dDuNh8SJWBAAAAAqB7kUo7szkhHNX6lUijP6dE6Dtfpv2/wMew3lD+bhzhLch/qOSRrRlH8Jp8vsahYulB5xXyKeRdmd83a5FqbAg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4QUEZbU/2USBuQNRhlYZ6QAAAAACAAAAAAAQZgAAAAEAACAAAACCDyXoQ3zPvK/MqIpVeRCg0/3Y2TEBOyor0YfifEQH5QAAAAAOgAAAAAIAACAAAAD1gyNyQp7Q80LC6FDI9P/CTIZKrGmMDvEunmDeKMkUF5AAAADjwNQ0WGmkkasEXtbZITxDoDgsjxg1si0V9nRO68OYWGJRCi0XSbuEohclXk6QOCcfJoWosrzk5w+mJ3y4GA1jToT81GFhvCr9O8+0kXb3sQaMCZ/HMAR9zA3fNIZAzemWFR5EVAOPmH2Vd4ejsBjyxHAJPpkevNtjHO6ftSK36plFX0p6LC11j4GTnzE/uBpAAAAAIqGmgXruTuKpGpU0m/oOUVdsh6bipKDhI/WuJLP/72ey72Awxu2OQB09kfsStwEMMO+e7Oq31AiJ3uOTQuaK1Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -48,7 +48,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-JEOL8PT\SACHA_SQLSERVER;Initial Catalog=Dashboards;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-HFCK7TV;Initial Catalog=Dashboards;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -107,7 +107,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">DESKTOP-JEOL8PT\SACHA_SQLSERVER</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">DESKTOP-HFCK7TV</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>

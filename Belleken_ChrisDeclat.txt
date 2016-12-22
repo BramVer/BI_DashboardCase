@@ -1,0 +1,3 @@
+Feitentabel -> mist nog aantal (per onderdeel bvbeeld)
+Uitvoering & motor i aparte dimensie
+Mixnummer => In feitentabel (kan ook i wagen, logischer), uitleggen via Degenerate dimension
