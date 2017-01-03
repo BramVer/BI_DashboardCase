@@ -7,14 +7,149 @@
   DTS:CreatorName="DESKTOP-JEOL8PT\sacha"
   DTS:DTSID="{F13B47C5-9285-424D-8F1C-2F7EA32BF71A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{11B577AC-0C22-48DC-BEDD-73B5D1D6BEC8}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{2C8222A2-A131-456D-8638-C9A5A2A2CCBD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{E356FCAF-3858-44BA-BEAF-47BC0D23C85B}"
+      DTS:ObjectName="DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-JEOL8PT\SACHA_SQLSERVER;Initial Catalog=Dashboards;Integrated Security=True;Application Name=SSIS-Package1-{E356FCAF-3858-44BA-BEAF-47BC0D23C85B}DESKTOP-JEOL8PT\SACHA_SQLSERVER.Dashboards1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1CFC1794-8217-435B-8224-3A08A516B163}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sacha\it\sql\BI_DashboardCase\errorlog.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wagen_Id"
+              DTS:DTSID="{18BFF8A3-C2E9-44CB-BC9F-16C5E5738DE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mixnummer"
+              DTS:DTSID="{7DDF4F3D-AD41-47F4-B2C2-657AFC9760A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mixmoment"
+              DTS:DTSID="{487F2A08-2B99-4664-BF9E-5B9D412A5CD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WagenType"
+              DTS:DTSID="{E1B7C21B-A966-4876-BA59-69BE25B55719}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Uitvoering"
+              DTS:DTSID="{4E9BBE56-8431-43A3-93BF-7BB07087B191}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Motor"
+              DTS:DTSID="{30343E9E-73BC-4088-81E7-F40092F7E8D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Kleur"
+              DTS:DTSID="{2E8DCAC2-A28C-4A1A-A87B-941F4BB9DEA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bekleding"
+              DTS:DTSID="{B9AF4A8C-0075-47FF-AC80-7462D10EBDDC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KleurInterieur"
+              DTS:DTSID="{9A20838E-5A65-451D-9E25-461ACB631F98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Maatsysteem"
+              DTS:DTSID="{30CD81B0-ACD5-4ABA-BC75-1BA912F0F84A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Taal"
+              DTS:DTSID="{E23475A3-CBCC-44A6-B747-B5CDA5EEA097}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{E1597278-BE4D-4345-9368-02C93C1287BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{7027B3F6-6D13-4B9A-B3A6-43A6E1EBD335}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -84,6 +219,7 @@
           DTS:DTSID="{22E62780-93D6-49C0-AC00-9BFD09A34FC5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
+          DTS:MaxErrorCount="2147483647"
           DTS:ObjectName="Data Flow Task"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
@@ -91,6 +227,544 @@
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Conditional Split"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml"></property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml"></property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Connections[OleDbConnection]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 2"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml"></property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Connections[OleDbConnection]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 3"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml"></property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Connections[OleDbConnection]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
@@ -107,7 +781,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Wagen]</property>
+                      name="OpenRowset"></property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -129,7 +803,7 @@
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -141,7 +815,7 @@
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                      name="FastLoadOptions"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -150,8 +824,6 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="{63932EC4-53BB-430A-BE9E-226730D93FFA}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JEOL8PT_SACHA_SQLSERVER.Dashboards]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -162,135 +834,8 @@
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mixnummer]"
-                          cachedDataType="ui4"
-                          cachedName="Mixnummer"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixnummer]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Mixmoment]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="Mixmoment"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixmoment]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixmoment]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WagenType]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="WagenType"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WagenType]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[WagenType]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Uitvoering]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Uitvoering"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uitvoering]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Uitvoering]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Motor]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Motor"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Motor]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Motor]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Kleur]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Kleur"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kleur]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Kleur]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Bekleding]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Bekleding"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bekleding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Bekleding]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[KleurInterieur]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="KleurInterieur"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KleurInterieur]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[KleurInterieur]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Maatsysteem]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Maatsysteem"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maatsysteem]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Maatsysteem]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Taal]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Taal"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taal]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Taal]" />
-                      </inputColumns>
                       <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixnummer]"
-                          dataType="i8"
-                          name="Mixnummer" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mixmoment]"
-                          dataType="dbTimeStamp"
-                          name="Mixmoment" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WagenType]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
-                          name="WagenType" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Uitvoering]"
-                          codePage="1252"
-                          dataType="str"
-                          length="20"
-                          name="Uitvoering" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Motor]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Motor" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kleur]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Kleur" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bekleding]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Bekleding" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KleurInterieur]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="KleurInterieur" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Maatsysteem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Maatsysteem" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Taal]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="Taal" />
-                      </externalMetadataColumns>
+                        isUsed="True" />
                     </input>
                   </inputs>
                   <outputs>
@@ -319,274 +864,294 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Foreach Loop Container\Data Flow Task\Union All"
-                  componentClassID="Microsoft.UnionAll"
-                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-                  name="Union All"
-                  version="1">
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
                   <inputs>
                     <input
-                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1]"
-                      name="Union All Input 1">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Wagen_Id]"
-                          cachedDataType="ui8"
-                          cachedName="Wagen_Id"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Wagen_Id]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Mixnummer]"
-                          cachedDataType="ui4"
-                          cachedName="Mixnummer"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixnummer]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Mixmoment]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="Mixmoment"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixmoment]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixmoment]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[WagenType]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="WagenType"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[WagenType]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[WagenType]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Uitvoering]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Uitvoering"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Uitvoering]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Uitvoering]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Motor]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Motor"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Motor]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Motor]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Kleur]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Kleur"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Kleur]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Kleur]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Bekleding]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Bekleding"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Bekleding]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Bekleding]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[KleurInterieur]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="KleurInterieur"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[KleurInterieur]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[KleurInterieur]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Maatsysteem]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Maatsysteem"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Maatsysteem]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Maatsysteem]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Taal]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Taal"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Taal]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Taal]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
                       hasSideEffects="true"
-                      name="Union All Input 2">
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 3]"
-                      hasSideEffects="true"
-                      name="Union All Input 3">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[Wagen_Id]"
-                          cachedDataType="ui8"
-                          cachedName="Wagen_Id"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Wagen_Id]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 4]"
-                      dangling="true"
-                      hasSideEffects="true"
-                      name="Union All Input 4">
-                      <externalMetadataColumns />
+                      name="OLE DB Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1]"
-                      name="Union All Output 1">
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]"
-                          dataType="ui8"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]"
-                          name="Wagen_Id" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]"
-                          dataType="ui4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixnummer]"
-                          name="Mixnummer" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 2"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Connections[OleDbConnection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixmoment]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Mixmoment]"
-                          name="Mixmoment" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[WagenType]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[WagenType]"
-                          name="WagenType" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 3"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Connections[OleDbConnection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Uitvoering]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Uitvoering]"
-                          name="Uitvoering" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Motor]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Motor]"
-                          name="Motor" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Kleur]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Kleur]"
-                          name="Kleur" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Bekleding]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Bekleding]"
-                          name="Bekleding" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[KleurInterieur]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[KleurInterieur]"
-                          name="KleurInterieur" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Maatsysteem]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Maatsysteem]"
-                          name="Maatsysteem" />
-                        <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Taal]"
-                          dataType="wstr"
-                          length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Taal]"
-                          name="Taal" />
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -622,7 +1187,7 @@
                       dataType="System.String"
                       description="The XML schema definition used by the XML source adapter."
                       expressionType="Notify"
-                      name="XMLSchemaDefinition">C:\Users\sacha\it\sql\BI_DashboardCase\Mixbestanden\Te Verwerken\MijnSchema.xsd</property>
+                      name="XMLSchemaDefinition">C:\Users\BramV\Dropbox\School\TI\3 TI\Sem 1 - Project\BI_DashboardCase\Mixbestanden\Te Verwerken\MijnSchema.xsd</property>
                     <property
                       dataType="System.Boolean"
                       description="Identifies whether or not to use inline schema."
@@ -1221,23 +1786,13 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 2]"
-                  name="Onderdeel"
-                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel]" />
-                <path
-                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 3]"
-                  name="Onderdelen"
-                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen]" />
-                <path
-                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="Union All Output 1"
-                  startId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Conditional Split Default Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Conditional Split Default Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
                   name="Wagen"
                   startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen]" />
               </paths>
@@ -1285,105 +1840,81 @@
     design-time-name="Package\Foreach Loop Container\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="134,42"
+          Size="122,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 2"
+          TopLeft="1030,338.75" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 1"
+          TopLeft="817.5,340" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup"
+          TopLeft="587.5,345" />
+        <NodeLayout
+          Size="200,42"
           Id="Package\Foreach Loop Container\Data Flow Task\XML Source"
-          TopLeft="133,154" />
+          TopLeft="766,91.25" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
-          TopLeft="114,376" />
+          Size="155,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Conditional Split"
+          TopLeft="788.75,186.25" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Union All"
-          TopLeft="141,273" />
+          Size="122,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 3"
+          TopLeft="1197.5,355" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
-          TopLeft="200.75,196">
+          TopLeft="866.125,133.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,69.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.942109375,29.08203125,31.88421875,11.3359375"
+              BoundingBox="-15.942109375,17.08203125,31.88421875,11.3359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
-          TopLeft="149,196">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Conditional Split Default Output]"
+          TopLeft="866.25,228.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="-222.25,116.75"
               Start="0,0"
-              End="0,69.5">
+              End="-222.25,109.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.1896484375,29.87548828125,46.379296875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
-          TopLeft="254,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77"
-              Start="0,0"
-              End="0,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,54.375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.375"
+                    Point2="0,58.375"
+                    Point3="-4,58.375" />
                   <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.009453125,29.87548828125,52.01890625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="200.5,315">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="-218.25,58.375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-218.25,58.375"
+                    Point2="-222.25,58.375"
+                    Point3="-222.25,62.375" />
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="-222.25,109.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1392,21 +1923,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="540,430" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1"
+          TopLeft="785,428" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2"
+          TopLeft="1073,454" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3"
+          TopLeft="1282,465" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
