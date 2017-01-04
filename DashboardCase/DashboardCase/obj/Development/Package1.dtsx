@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-JEOL8PT\sacha"
   DTS:DTSID="{F13B47C5-9285-424D-8F1C-2F7EA32BF71A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.4001.0"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{2C8222A2-A131-456D-8638-C9A5A2A2CCBD}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{60368F9B-84B6-45EE-B338-6EF645CA00D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -167,8 +167,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
+        DTS:DataType="8">C:\Users\sacha\it\sql\BI_DashboardCase\Mixbestanden\Te Verwerken\13844721.xml</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -295,7 +294,7 @@
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Onderdelen]</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -332,7 +331,7 @@
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml"></property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Stuknummer" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Naam" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Omschrijving" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Categorie" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WagenType" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Kleur" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Maatsysteem" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Taal" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StocklocatieRange" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Stukprijs" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -350,6 +349,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{63932EC4-53BB-430A-BE9E-226730D93FFA}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-JEOL8PT_SACHA_SQLSERVER.Dashboards]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1158,11 +1159,122 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Foreach Loop Container\Data Flow Task\XML Source"
+                  refId="Package\Foreach Loop Container\Data Flow Task\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Onderdelen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Onderdelen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].Columns[Onderdelen_Id]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Onderdelen_Id]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Wagen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Wagen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].Columns[Wagen_Id]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Onderdelen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Onderdelen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].Columns[Onderdelen_Id]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Onderdelen_Id]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[Wagen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Wagen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Wagen_Id]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 4]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 4">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Onderdelen_Id]"
+                          dataType="ui8"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]"
+                          dataType="ui8"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Wagen_Id]"
+                          name="Wagen_Id" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel"
                   componentClassID="Microsoft.ManagedComponentHost"
                   contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
-                  name="XML Source"
+                  name="XML Source - Onderdeel"
                   usesDispositions="true"
                   validateExternalMetadata="False"
                   version="2">
@@ -1187,7 +1299,7 @@
                       dataType="System.String"
                       description="The XML schema definition used by the XML source adapter."
                       expressionType="Notify"
-                      name="XMLSchemaDefinition">C:\Users\BramV\Dropbox\School\TI\3 TI\Sem 1 - Project\BI_DashboardCase\Mixbestanden\Te Verwerken\MijnSchema.xsd</property>
+                      name="XMLSchemaDefinition">C:\Users\sacha\it\sql\BI_DashboardCase\Mixbestanden\Te Verwerken\MijnSchema.xsd</property>
                     <property
                       dataType="System.Boolean"
                       description="Identifies whether or not to use inline schema."
@@ -1200,7 +1312,7 @@
                   </properties>
                   <outputs>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel]"
                       name="Onderdeel">
                       <properties>
                         <property
@@ -1210,29 +1322,29 @@
                       </properties>
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Categorie]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].Columns[Categorie]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].ExternalColumns[Categorie]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].ExternalColumns[Categorie]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Categorie]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].Columns[Categorie]"
                           name="Categorie"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].Columns[Onderdelen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].Columns[Onderdelen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].Columns[Onderdelen_Id]"
                           name="Onderdelen_Id"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].ExternalColumns[Categorie]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].ExternalColumns[Categorie]"
                           dataType="wstr"
                           length="255"
                           name="Categorie">
@@ -1243,7 +1355,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
                           dataType="ui8"
                           name="Onderdelen_Id">
                           <properties>
@@ -1255,7 +1367,7 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output]"
                       isErrorOut="true"
                       name="Onderdeel Error Output">
                       <properties>
@@ -1266,44 +1378,44 @@
                       </properties>
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[Categorie]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[Categorie]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[Categorie]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[Categorie]"
                           name="Categorie" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
                           name="Onderdelen_Id" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
                           dataType="nText"
                           name="Categorie" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
                           dataType="nText"
                           name="Onderdelen_Id" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen]"
                       name="Onderdelen">
                       <properties>
                         <property
@@ -1313,28 +1425,28 @@
                       </properties>
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].Columns[Onderdelen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Onderdelen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].Columns[Onderdelen_Id]"
                           name="Onderdelen_Id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].Columns[Wagen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].Columns[Wagen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].Columns[Wagen_Id]"
                           name="Wagen_Id"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
                           dataType="ui8"
                           name="Onderdelen_Id">
                           <properties>
@@ -1344,7 +1456,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
                           dataType="ui8"
                           name="Wagen_Id">
                           <properties>
@@ -1356,7 +1468,7 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output]"
                       isErrorOut="true"
                       name="Onderdelen Error Output">
                       <properties>
@@ -1367,44 +1479,44 @@
                       </properties>
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
                           name="Onderdelen_Id" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
                           name="Wagen_Id" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
                           dataType="nText"
                           name="Onderdelen_Id" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
                           dataType="nText"
                           name="Wagen_Id" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen]"
                       name="Wagen">
                       <properties>
                         <property
@@ -1414,117 +1526,117 @@
                       </properties>
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Wagen_Id]"
                           dataType="ui8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Wagen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Wagen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Wagen_Id]"
                           name="Wagen_Id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixnummer]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Mixnummer]"
                           dataType="ui4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Mixnummer]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixnummer]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Mixnummer]"
                           name="Mixnummer"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixmoment]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Mixmoment]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Mixmoment]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Mixmoment]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Mixmoment]"
                           name="Mixmoment"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[WagenType]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[WagenType]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[WagenType]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[WagenType]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[WagenType]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[WagenType]"
                           name="WagenType"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Uitvoering]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Uitvoering]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Uitvoering]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Uitvoering]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Uitvoering]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Uitvoering]"
                           name="Uitvoering"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Motor]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Motor]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Motor]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Motor]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Motor]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Motor]"
                           name="Motor"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Kleur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Kleur]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Kleur]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Kleur]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Kleur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Kleur]"
                           name="Kleur"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Bekleding]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Bekleding]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Bekleding]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Bekleding]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Bekleding]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Bekleding]"
                           name="Bekleding"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[KleurInterieur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[KleurInterieur]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[KleurInterieur]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[KleurInterieur]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[KleurInterieur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[KleurInterieur]"
                           name="KleurInterieur"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Maatsysteem]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Maatsysteem]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Maatsysteem]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Maatsysteem]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Maatsysteem]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Maatsysteem]"
                           name="Maatsysteem"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Taal]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Taal]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Taal]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Taal]"
                           length="255"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].Columns[Taal]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].Columns[Taal]"
                           name="Taal"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Wagen_Id]"
                           dataType="ui8"
                           name="Wagen_Id">
                           <properties>
@@ -1534,7 +1646,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Mixnummer]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Mixnummer]"
                           dataType="ui4"
                           name="Mixnummer">
                           <properties>
@@ -1544,7 +1656,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Mixmoment]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Mixmoment]"
                           dataType="dbTimeStamp"
                           name="Mixmoment">
                           <properties>
@@ -1554,7 +1666,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[WagenType]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[WagenType]"
                           dataType="wstr"
                           length="255"
                           name="WagenType">
@@ -1565,7 +1677,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Uitvoering]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Uitvoering]"
                           dataType="wstr"
                           length="255"
                           name="Uitvoering">
@@ -1576,7 +1688,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Motor]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Motor]"
                           dataType="wstr"
                           length="255"
                           name="Motor">
@@ -1587,7 +1699,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Kleur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Kleur]"
                           dataType="wstr"
                           length="255"
                           name="Kleur">
@@ -1598,7 +1710,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Bekleding]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Bekleding]"
                           dataType="wstr"
                           length="255"
                           name="Bekleding">
@@ -1609,7 +1721,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[KleurInterieur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[KleurInterieur]"
                           dataType="wstr"
                           length="255"
                           name="KleurInterieur">
@@ -1620,7 +1732,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Maatsysteem]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Maatsysteem]"
                           dataType="wstr"
                           length="255"
                           name="Maatsysteem">
@@ -1631,7 +1743,7 @@
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen].ExternalColumns[Taal]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen].ExternalColumns[Taal]"
                           dataType="wstr"
                           length="255"
                           name="Taal">
@@ -1644,7 +1756,7 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output]"
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output]"
                       isErrorOut="true"
                       name="Wagen Error Output">
                       <properties>
@@ -1655,128 +1767,1379 @@
                       </properties>
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Wagen_Id]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Wagen_Id]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Wagen_Id]"
                           name="Wagen_Id" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixnummer]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Mixnummer]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixnummer]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Mixnummer]"
                           name="Mixnummer" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixmoment]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Mixmoment]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Mixmoment]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Mixmoment]"
                           name="Mixmoment" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[WagenType]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[WagenType]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[WagenType]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[WagenType]"
                           name="WagenType" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Uitvoering]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Uitvoering]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Uitvoering]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Uitvoering]"
                           name="Uitvoering" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Motor]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Motor]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Motor]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Motor]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Motor]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Motor]"
                           name="Motor" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Kleur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Kleur]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Kleur]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Kleur]"
                           name="Kleur" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Bekleding]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Bekleding]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Bekleding]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Bekleding]"
                           name="Bekleding" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[KleurInterieur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[KleurInterieur]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[KleurInterieur]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[KleurInterieur]"
                           name="KleurInterieur" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Maatsysteem]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Maatsysteem]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Maatsysteem]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Maatsysteem]"
                           name="Maatsysteem" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Taal]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Taal]"
                           dataType="nText"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Taal]"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[Taal]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Taal]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[Taal]"
                           name="Taal" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
                           dataType="nText"
                           name="Wagen_Id" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
                           dataType="nText"
                           name="Mixnummer" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
                           dataType="nText"
                           name="Mixmoment" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
                           dataType="nText"
                           name="WagenType" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
                           dataType="nText"
                           name="Uitvoering" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Motor]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Motor]"
                           dataType="nText"
                           name="Motor" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
                           dataType="nText"
                           name="Kleur" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
                           dataType="nText"
                           name="Bekleding" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
                           dataType="nText"
                           name="KleurInterieur" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
                           dataType="nText"
                           name="Maatsysteem" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen Error Output].ExternalColumns[Taal]"
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Wagen Error Output].ExternalColumns[Taal]"
+                          dataType="nText"
+                          name="Taal" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
+                  name="XML Source - Onderdelen"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                    <property
+                      dataType="System.String"
+                      description="The XML data used by the XML source adapter."
+                      expressionType="Notify"
+                      name="XMLData"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable used by the XML source adapter to specify XML data."
+                      name="XMLDataVariable">User::FilePath</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Defines how the XML source adapter gets XML data."
+                      name="AccessMode">1</property>
+                    <property
+                      dataType="System.String"
+                      description="The XML schema definition used by the XML source adapter."
+                      expressionType="Notify"
+                      name="XMLSchemaDefinition">C:\Users\sacha\it\sql\BI_DashboardCase\Mixbestanden\Te Verwerken\MijnSchema.xsd</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Identifies whether or not to use inline schema."
+                      name="UseInlineSchema">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Defines how XML integer types are mapped."
+                      name="XMLIntegerMapping"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+                  </properties>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen]"
+                      name="Onderdelen">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdelen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].Columns[Onderdelen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].Columns[Wagen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].Columns[Wagen_Id]"
+                          name="Wagen_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
+                          dataType="ui8"
+                          name="Onderdelen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
+                          dataType="ui8"
+                          name="Wagen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output]"
+                      isErrorOut="true"
+                      name="Onderdelen Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdelen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
+                          name="Wagen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
+                          dataType="nText"
+                          name="Onderdelen_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
+                          dataType="nText"
+                          name="Wagen_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen]"
+                      name="Wagen">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Wagen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Wagen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Wagen_Id]"
+                          name="Wagen_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Mixnummer]"
+                          dataType="ui4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Mixnummer]"
+                          name="Mixnummer"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Mixmoment]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Mixmoment]"
+                          name="Mixmoment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[WagenType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[WagenType]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[WagenType]"
+                          name="WagenType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Uitvoering]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Uitvoering]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Uitvoering]"
+                          name="Uitvoering"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Motor]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Motor]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Motor]"
+                          name="Motor"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Kleur]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Kleur]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Kleur]"
+                          name="Kleur"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Bekleding]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Bekleding]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Bekleding]"
+                          name="Bekleding"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[KleurInterieur]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[KleurInterieur]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[KleurInterieur]"
+                          name="KleurInterieur"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Maatsysteem]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Maatsysteem]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Maatsysteem]"
+                          name="Maatsysteem"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Taal]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Taal]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].Columns[Taal]"
+                          name="Taal"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Wagen_Id]"
+                          dataType="ui8"
+                          name="Wagen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Mixnummer]"
+                          dataType="ui4"
+                          name="Mixnummer">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt32</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Mixmoment]"
+                          dataType="dbTimeStamp"
+                          name="Mixmoment">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.DateTime</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[WagenType]"
+                          dataType="wstr"
+                          length="255"
+                          name="WagenType">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Uitvoering]"
+                          dataType="wstr"
+                          length="255"
+                          name="Uitvoering">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Motor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Motor">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Kleur]"
+                          dataType="wstr"
+                          length="255"
+                          name="Kleur">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Bekleding]"
+                          dataType="wstr"
+                          length="255"
+                          name="Bekleding">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[KleurInterieur]"
+                          dataType="wstr"
+                          length="255"
+                          name="KleurInterieur">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Maatsysteem]"
+                          dataType="wstr"
+                          length="255"
+                          name="Maatsysteem">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen].ExternalColumns[Taal]"
+                          dataType="wstr"
+                          length="255"
+                          name="Taal">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output]"
+                      isErrorOut="true"
+                      name="Wagen Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Wagen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Wagen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Wagen_Id]"
+                          name="Wagen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Mixnummer]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Mixnummer]"
+                          name="Mixnummer" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Mixmoment]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Mixmoment]"
+                          name="Mixmoment" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[WagenType]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[WagenType]"
+                          name="WagenType" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Uitvoering]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Uitvoering]"
+                          name="Uitvoering" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Motor]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Motor]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Motor]"
+                          name="Motor" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Kleur]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Kleur]"
+                          name="Kleur" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Bekleding]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Bekleding]"
+                          name="Bekleding" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[KleurInterieur]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[KleurInterieur]"
+                          name="KleurInterieur" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Maatsysteem]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Maatsysteem]"
+                          name="Maatsysteem" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Taal]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Taal]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[Taal]"
+                          name="Taal" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
+                          dataType="nText"
+                          name="Wagen_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
+                          dataType="nText"
+                          name="Mixnummer" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
+                          dataType="nText"
+                          name="Mixmoment" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
+                          dataType="nText"
+                          name="WagenType" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
+                          dataType="nText"
+                          name="Uitvoering" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Motor]"
+                          dataType="nText"
+                          name="Motor" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
+                          dataType="nText"
+                          name="Kleur" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
+                          dataType="nText"
+                          name="Bekleding" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
+                          dataType="nText"
+                          name="KleurInterieur" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
+                          dataType="nText"
+                          name="Maatsysteem" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Wagen Error Output].ExternalColumns[Taal]"
+                          dataType="nText"
+                          name="Taal" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel]"
+                      name="Onderdeel">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdeel</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].Columns[Categorie]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].ExternalColumns[Categorie]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].Columns[Categorie]"
+                          name="Categorie"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].Columns[Onderdelen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].ExternalColumns[Categorie]"
+                          dataType="wstr"
+                          length="255"
+                          name="Categorie">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
+                          dataType="ui8"
+                          name="Onderdelen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output]"
+                      isErrorOut="true"
+                      name="Onderdeel Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdeel</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[Categorie]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[Categorie]"
+                          name="Categorie" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
+                          dataType="nText"
+                          name="Categorie" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
+                          dataType="nText"
+                          name="Onderdelen_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Extracts data from an XML file. For example, extract catalog data from an XML file that represents catalogs and catalog items. Before using, specify the schema and generate an output for each XML element."
+                  name="XML Source - Wagen"
+                  usesDispositions="true"
+                  validateExternalMetadata="False"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                    <property
+                      dataType="System.String"
+                      description="The XML data used by the XML source adapter."
+                      expressionType="Notify"
+                      name="XMLData"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable used by the XML source adapter to specify XML data."
+                      name="XMLDataVariable">User::FilePath</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Defines how the XML source adapter gets XML data."
+                      name="AccessMode">1</property>
+                    <property
+                      dataType="System.String"
+                      description="The XML schema definition used by the XML source adapter."
+                      expressionType="Notify"
+                      name="XMLSchemaDefinition">C:\Users\sacha\it\sql\BI_DashboardCase\Mixbestanden\Te Verwerken\MijnSchema.xsd</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Identifies whether or not to use inline schema."
+                      name="UseInlineSchema">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Defines how XML integer types are mapped."
+                      name="XMLIntegerMapping"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+                  </properties>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel]"
+                      name="Onderdeel">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdeel</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].Columns[Categorie]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].ExternalColumns[Categorie]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].Columns[Categorie]"
+                          name="Categorie"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].Columns[Onderdelen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].ExternalColumns[Categorie]"
+                          dataType="wstr"
+                          length="255"
+                          name="Categorie">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel].ExternalColumns[Onderdelen_Id]"
+                          dataType="ui8"
+                          name="Onderdelen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output]"
+                      isErrorOut="true"
+                      name="Onderdeel Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdeel</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[Categorie]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[Categorie]"
+                          name="Categorie" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].ExternalColumns[Categorie]"
+                          dataType="nText"
+                          name="Categorie" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdeel Error Output].ExternalColumns[Onderdelen_Id]"
+                          dataType="nText"
+                          name="Onderdelen_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen]"
+                      name="Onderdelen">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdelen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].Columns[Onderdelen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].Columns[Wagen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].Columns[Wagen_Id]"
+                          name="Wagen_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].ExternalColumns[Onderdelen_Id]"
+                          dataType="ui8"
+                          name="Onderdelen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen].ExternalColumns[Wagen_Id]"
+                          dataType="ui8"
+                          name="Wagen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output]"
+                      isErrorOut="true"
+                      name="Onderdelen Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Onderdelen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[Onderdelen_Id]"
+                          name="Onderdelen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[Wagen_Id]"
+                          name="Wagen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].ExternalColumns[Onderdelen_Id]"
+                          dataType="nText"
+                          name="Onderdelen_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Onderdelen Error Output].ExternalColumns[Wagen_Id]"
+                          dataType="nText"
+                          name="Wagen_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen]"
+                      name="Wagen">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Wagen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Wagen_Id]"
+                          dataType="ui8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Wagen_Id]"
+                          name="Wagen_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Mixnummer]"
+                          dataType="ui4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Mixnummer]"
+                          name="Mixnummer"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Mixmoment]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Mixmoment]"
+                          name="Mixmoment"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[WagenType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[WagenType]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[WagenType]"
+                          name="WagenType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Uitvoering]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Uitvoering]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Uitvoering]"
+                          name="Uitvoering"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Motor]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Motor]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Motor]"
+                          name="Motor"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Kleur]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Kleur]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Kleur]"
+                          name="Kleur"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Bekleding]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Bekleding]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Bekleding]"
+                          name="Bekleding"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[KleurInterieur]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[KleurInterieur]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[KleurInterieur]"
+                          name="KleurInterieur"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Maatsysteem]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Maatsysteem]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Maatsysteem]"
+                          name="Maatsysteem"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Taal]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Taal]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].Columns[Taal]"
+                          name="Taal"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Wagen_Id]"
+                          dataType="ui8"
+                          name="Wagen_Id">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt64</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Mixnummer]"
+                          dataType="ui4"
+                          name="Mixnummer">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.UInt32</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Mixmoment]"
+                          dataType="dbTimeStamp"
+                          name="Mixmoment">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.DateTime</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[WagenType]"
+                          dataType="wstr"
+                          length="255"
+                          name="WagenType">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Uitvoering]"
+                          dataType="wstr"
+                          length="255"
+                          name="Uitvoering">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Motor]"
+                          dataType="wstr"
+                          length="255"
+                          name="Motor">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Kleur]"
+                          dataType="wstr"
+                          length="255"
+                          name="Kleur">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Bekleding]"
+                          dataType="wstr"
+                          length="255"
+                          name="Bekleding">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[KleurInterieur]"
+                          dataType="wstr"
+                          length="255"
+                          name="KleurInterieur">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Maatsysteem]"
+                          dataType="wstr"
+                          length="255"
+                          name="Maatsysteem">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen].ExternalColumns[Taal]"
+                          dataType="wstr"
+                          length="255"
+                          name="Taal">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              name="CLRType">System.String</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output]"
+                      isErrorOut="true"
+                      name="Wagen Error Output">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Identifies the rowset associated with the output."
+                          name="RowsetID">Wagen</property>
+                      </properties>
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Wagen_Id]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Wagen_Id]"
+                          name="Wagen_Id" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Mixnummer]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Mixnummer]"
+                          name="Mixnummer" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Mixmoment]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Mixmoment]"
+                          name="Mixmoment" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[WagenType]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[WagenType]"
+                          name="WagenType" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Uitvoering]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Uitvoering]"
+                          name="Uitvoering" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Motor]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Motor]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Motor]"
+                          name="Motor" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Kleur]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Kleur]"
+                          name="Kleur" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Bekleding]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Bekleding]"
+                          name="Bekleding" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[KleurInterieur]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[KleurInterieur]"
+                          name="KleurInterieur" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Maatsysteem]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Maatsysteem]"
+                          name="Maatsysteem" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Taal]"
+                          dataType="nText"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Taal]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[Taal]"
+                          name="Taal" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Wagen_Id]"
+                          dataType="nText"
+                          name="Wagen_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Mixnummer]"
+                          dataType="nText"
+                          name="Mixnummer" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Mixmoment]"
+                          dataType="nText"
+                          name="Mixmoment" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[WagenType]"
+                          dataType="nText"
+                          name="WagenType" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Uitvoering]"
+                          dataType="nText"
+                          name="Uitvoering" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Motor]"
+                          dataType="nText"
+                          name="Motor" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Kleur]"
+                          dataType="nText"
+                          name="Kleur" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Bekleding]"
+                          dataType="nText"
+                          name="Bekleding" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[KleurInterieur]"
+                          dataType="nText"
+                          name="KleurInterieur" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Maatsysteem]"
+                          dataType="nText"
+                          name="Maatsysteem" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen Error Output].ExternalColumns[Taal]"
                           dataType="nText"
                           name="Taal" />
                       </externalMetadataColumns>
@@ -1791,10 +3154,25 @@
                   name="Conditional Split Default Output"
                   startId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  name="Onderdeel"
+                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel.Outputs[Onderdeel]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Onderdelen"
+                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
                   endId="Package\Foreach Loop Container\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Union All Output 1"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Union All.Inputs[Union All Input 3]"
                   name="Wagen"
-                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source.Outputs[Wagen]" />
+                  startId="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen.Outputs[Wagen]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1840,81 +3218,193 @@
     design-time-name="Package\Foreach Loop Container\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="122,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 2"
-          TopLeft="1030,338.75" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 1"
-          TopLeft="817.5,340" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Lookup"
-          TopLeft="587.5,345" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\XML Source"
-          TopLeft="766,91.25" />
+          Size="140,63"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen"
+          TopLeft="611,6.25" />
         <NodeLayout
           Size="155,42"
           Id="Package\Foreach Loop Container\Data Flow Task\Conditional Split"
-          TopLeft="788.75,186.25" />
+          TopLeft="806.25,280" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup"
+          TopLeft="495,428.75" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 1"
+          TopLeft="668.75,428.75" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Lookup 2"
+          TopLeft="958.75,431.25" />
         <NodeLayout
           Size="122,42"
           Id="Package\Foreach Loop Container\Data Flow Task\Lookup 3"
-          TopLeft="1197.5,355" />
+          TopLeft="1148.75,432.5" />
+        <NodeLayout
+          Size="193,61"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel"
+          TopLeft="807.5,10" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="451.25,600" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1"
+          TopLeft="645,601.25" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2"
+          TopLeft="938.75,608.25" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3"
+          TopLeft="1133.75,602" />
+        <NodeLayout
+          Size="143,65"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen"
+          TopLeft="1066.25,10.25" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Union All"
+          TopLeft="818.75,183.75" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
-          TopLeft="866.125,133.25">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
+          TopLeft="681,69.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="170,114.5"
               Start="0,0"
-              End="0,45.5">
+              End="170,107">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,70.6873315363881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.6873315363881"
+                    Point2="0,74.6873315363881"
+                    Point3="4,74.6873315363881" />
+                  <mssgle:LineSegment
+                    End="166,74.6873315363881" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166,74.6873315363881"
+                    Point2="170,74.6873315363881"
+                    Point3="170,78.6873315363881" />
+                  <mssgle:LineSegment
+                    End="170,107" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.942109375,17.08203125,31.88421875,11.3359375"
+              BoundingBox="58.990546875,79.6873315363881,52.01890625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
+          TopLeft="904,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.75,112.75"
+              Start="0,0"
+              End="-24.75,105.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.375"
+                    Point2="0,56.375"
+                    Point3="-4,56.375" />
+                  <mssgle:LineSegment
+                    End="-20.75,56.375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.75,56.375"
+                    Point2="-24.75,56.375"
+                    Point3="-24.75,60.375" />
+                  <mssgle:LineSegment
+                    End="-24.75,105.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.5646484375,61.375,46.379296875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
+          TopLeft="1137.75,75.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-230.25,108.5"
+              Start="0,0"
+              End="-230.25,101">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.7735849056604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66.7735849056604"
+                    Point2="0,70.7735849056604"
+                    Point3="-4,70.7735849056604" />
+                  <mssgle:LineSegment
+                    End="-226.25,70.7735849056604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-226.25,70.7735849056604"
+                    Point2="-230.25,70.7735849056604"
+                    Point3="-230.25,74.7735849056604" />
+                  <mssgle:LineSegment
+                    End="-230.25,101" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.067109375,75.7735849056604,31.88421875,11.3359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Conditional Split Default Output]"
-          TopLeft="866.25,228.25">
+          TopLeft="883.75,322">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-222.25,116.75"
+              EndConnector="-332.25,106.75"
               Start="0,0"
-              End="-222.25,109.25">
+              End="-332.25,99.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.375" />
+                    End="0,49.375" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,54.375"
-                    Point2="0,58.375"
-                    Point3="-4,58.375" />
+                    Point1="0,49.375"
+                    Point2="0,53.375"
+                    Point3="-4,53.375" />
                   <mssgle:LineSegment
-                    End="-218.25,58.375" />
+                    End="-328.25,53.375" />
                   <mssgle:CubicBezierSegment
-                    Point1="-218.25,58.375"
-                    Point2="-222.25,58.375"
-                    Point3="-222.25,62.375" />
+                    Point1="-328.25,53.375"
+                    Point2="-332.25,53.375"
+                    Point3="-332.25,57.375" />
                   <mssgle:LineSegment
-                    End="-222.25,109.25" />
+                    End="-332.25,99.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1923,24 +3413,53 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
-          TopLeft="540,430" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1"
-          TopLeft="785,428" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2"
-          TopLeft="1073,454" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3"
-          TopLeft="1282,465" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="881.5,225.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.25"
+              Start="0,0"
+              End="0,46.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Onderdelen]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
