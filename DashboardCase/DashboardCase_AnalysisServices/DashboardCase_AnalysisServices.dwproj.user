@@ -3,12 +3,14 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <TargetServer>DESKTOP-HFCK7TV</TargetServer>
         <TargetDatabase>DashboardCase_AnalysisServices</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
           <ObjectType>Current</ObjectType>
         </StartObject>
+        <ProcessingOption>DoNotProcess</ProcessingOption>
+        <DeploymentMode>DeployAll</DeploymentMode>
       </Options>
     </Configuration>
   </Configurations>
