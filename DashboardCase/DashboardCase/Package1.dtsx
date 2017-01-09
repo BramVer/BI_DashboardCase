@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-JEOL8PT\sacha"
   DTS:DTSID="{F13B47C5-9285-424D-8F1C-2F7EA32BF71A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="13.0.4001.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{6CC13578-335D-4868-B2E0-19F625D8E8A9}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{1992915D-39BB-4DF9-9438-6541C924F181}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1773,6 +1773,1562 @@
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Script Component"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;10"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="Script Component"
+                  version="10">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using System.Data.SqlClient;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        SqlConnection conn = new SqlConnection(this.Connections.db.ConnectionString);
+        conn.Open();
+
+        SqlCommand cmd = new SqlCommand();
+        SqlDataReader rdr;
+
+        cmd.CommandText = "SELECT ausam.Stuknummer FROM dbo.AutoSamenstelling ausam LEFT JOIN dbo.Onderdelen ond ON ausam.Stuknummer = ond.Stuknummer LEFT JOIN dbo.StockLocatieRanges stock ON ond.StocklocatieRange = stock.ID LEFT JOIN dbo.Wagen wag ON ausam.Mixnummer = wag.Mixnummer "
+                + "WHERE ond.WagenType = " + Row.WagenType + " && ond.Kleur = " + Row.Kleur + " && ond.Taal = " + Row.Taal
+                + " && wag.MaatSysteem = " + Row.Maatsysteem + " && wag.Uitvoering = " + Row.Uitvoering + " && wag.Motor = " + Row.Motor
+                + " && wag.Bekleding = " + Row.Bekleding + " && wag.KleurInterieur = " + Row.KleurInterieur + ";";
+        cmd.CommandType = CommandType.Text;
+
+        rdr = cmd.ExecuteReader();
+
+        while(rdr.Read())
+        {
+            Row.Stuknummer = rdr.GetString(0);
+        }
+
+        conn.Close();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_1c575eca29d04d65aba8d64e3082031b.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{942058f0-86b5-44af-9c52-e483444d9198}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_1c575eca29d04d65aba8d64e3082031b</RootNamespace>
+    <AssemblyName>SC_1c575eca29d04d65aba8d64e3082031b</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_1c575eca29d04d65aba8d64e3082031b" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public UInt64 WagenId
+    {
+        get
+        {
+            return Buffer.GetUInt64(BufferColumnIndexes[0]);
+        }
+    }
+    public bool WagenId_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public UInt32 Mixnummer
+    {
+        get
+        {
+            return Buffer.GetUInt32(BufferColumnIndexes[1]);
+        }
+    }
+    public bool Mixnummer_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public DateTime Mixmoment
+    {
+        get
+        {
+            return Buffer.GetDateTime(BufferColumnIndexes[2]);
+        }
+    }
+    public bool Mixmoment_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String WagenType
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool WagenType_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public String Motor
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[4]);
+        }
+    }
+    public bool Motor_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public String Kleur
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[5]);
+        }
+    }
+    public bool Kleur_IsNull
+    {
+        get
+        {
+            return IsNull(5);
+        }
+    }
+
+    public String Bekleding
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[6]);
+        }
+    }
+    public bool Bekleding_IsNull
+    {
+        get
+        {
+            return IsNull(6);
+        }
+    }
+
+    public String KleurInterieur
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[7]);
+        }
+    }
+    public bool KleurInterieur_IsNull
+    {
+        get
+        {
+            return IsNull(7);
+        }
+    }
+
+    public String Maatsysteem
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[8]);
+        }
+    }
+    public bool Maatsysteem_IsNull
+    {
+        get
+        {
+            return IsNull(8);
+        }
+    }
+
+    public String Taal
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[9]);
+        }
+    }
+    public bool Taal_IsNull
+    {
+        get
+        {
+            return IsNull(9);
+        }
+    }
+
+    public String Uitvoering
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[10]);
+        }
+    }
+    public bool Uitvoering_IsNull
+    {
+        get
+        {
+            return IsNull(10);
+        }
+    }
+
+    public UInt64 OnderdelenId
+    {
+        get
+        {
+            return Buffer.GetUInt64(BufferColumnIndexes[11]);
+        }
+    }
+    public bool OnderdelenId_IsNull
+    {
+        get
+        {
+            return IsNull(11);
+        }
+    }
+
+    public String Categorie
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[12]);
+        }
+    }
+    public bool Categorie_IsNull
+    {
+        get
+        {
+            return IsNull(12);
+        }
+    }
+
+    public UInt64 CopyofWagenId
+    {
+        get
+        {
+            return Buffer.GetUInt64(BufferColumnIndexes[13]);
+        }
+    }
+    public bool CopyofWagenId_IsNull
+    {
+        get
+        {
+            return IsNull(13);
+        }
+    }
+
+    public UInt32 CopyofMixnummer
+    {
+        get
+        {
+            return Buffer.GetUInt32(BufferColumnIndexes[14]);
+        }
+    }
+    public bool CopyofMixnummer_IsNull
+    {
+        get
+        {
+            return IsNull(14);
+        }
+    }
+
+    public DateTime CopyofMixmoment
+    {
+        get
+        {
+            return Buffer.GetDateTime(BufferColumnIndexes[15]);
+        }
+    }
+    public bool CopyofMixmoment_IsNull
+    {
+        get
+        {
+            return IsNull(15);
+        }
+    }
+
+    public String CopyofWagenType
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[16]);
+        }
+    }
+    public bool CopyofWagenType_IsNull
+    {
+        get
+        {
+            return IsNull(16);
+        }
+    }
+
+    public String CopyofMotor
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[17]);
+        }
+    }
+    public bool CopyofMotor_IsNull
+    {
+        get
+        {
+            return IsNull(17);
+        }
+    }
+
+    public String CopyofKleur
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[18]);
+        }
+    }
+    public bool CopyofKleur_IsNull
+    {
+        get
+        {
+            return IsNull(18);
+        }
+    }
+
+    public String CopyofBekleding
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[19]);
+        }
+    }
+    public bool CopyofBekleding_IsNull
+    {
+        get
+        {
+            return IsNull(19);
+        }
+    }
+
+    public String CopyofKleurInterieur
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[20]);
+        }
+    }
+    public bool CopyofKleurInterieur_IsNull
+    {
+        get
+        {
+            return IsNull(20);
+        }
+    }
+
+    public String CopyofMaatsysteem
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[21]);
+        }
+    }
+    public bool CopyofMaatsysteem_IsNull
+    {
+        get
+        {
+            return IsNull(21);
+        }
+    }
+
+    public String CopyofTaal
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[22]);
+        }
+    }
+    public bool CopyofTaal_IsNull
+    {
+        get
+        {
+            return IsNull(22);
+        }
+    }
+
+    public String CopyofUitvoering
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[23]);
+        }
+    }
+    public bool CopyofUitvoering_IsNull
+    {
+        get
+        {
+            return IsNull(23);
+        }
+    }
+
+    public UInt64 CopyofOnderdelenId
+    {
+        get
+        {
+            return Buffer.GetUInt64(BufferColumnIndexes[24]);
+        }
+    }
+    public bool CopyofOnderdelenId_IsNull
+    {
+        get
+        {
+            return IsNull(24);
+        }
+    }
+
+    public String CopyofCategorie
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[25]);
+        }
+    }
+    public bool CopyofCategorie_IsNull
+    {
+        get
+        {
+            return IsNull(25);
+        }
+    }
+
+    public String Stuknummer
+    {
+        set
+        {
+            this[26] = value;
+        }
+    }
+    public bool Stuknummer_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(26);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1c575eca29d04d65aba8d64e3082031b.Properties.Settings.get_Default():SC_1c575eca29d04d65aba8d64e3082031b.Properties.Sett" +
+    "ings")]
+
+namespace SC_1c575eca29d04d65aba8d64e3082031b.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+    public IDTSConnectionManager100 db
+    {
+        get
+        {
+            return ParentComponent.ComponentMetaData.RuntimeConnectionCollection.GetRuntimeConnectionByName(@"db").ConnectionManager;
+        }
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_1c575eca29d04d65aba8d64e3082031b</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_1c575eca29d04d65aba8d64e3082031b</msb:DisplayName>
+		<msb:ProjectId>{C8435608-91BB-4BB0-A008-FA115A1A63E3}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_1c575eca29d04d65aba8d64e3082031b.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_1c575eca29d04d65aba8d64e3082031b")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_1c575eca29d04d65aba8d64e3082031b")]
+[assembly: AssemblyCopyright("Copyright @  2017")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1c575eca29d04d65aba8d64e3082031b.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1c575eca29d04d65aba8d64e3082031b.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_1c575eca29d04d65aba8d64e3082031b.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_1c575eca29d04d65aba8d64e3082031b.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_1c575eca29d04d65aba8d64e3082031b.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_1c575eca29d04d65aba8d64e3082031b.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABOPc1gAAAAAAAAAAOAAIiALATAAACgAAAAIAAAAAAAA/kUA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKxFAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAABCYAAAAgAAAAKAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAAqAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAMAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADg
+RQAAAAAAAEgAAAACAAUA0CUAACQfAAABAAAAAAAAAPREAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAUA+AAAAAEAABECewEAAARv
+QwAABm8SAAAKcxMAAAoKBm8UAAAKcxUAAAoLBx8RjSAAAAElFnIBAABwoiUXA28MAAAGoiUYcjIC
+AHCiJRkDbxAAAAaiJRpyVAIAcKIlGwNvGAAABqIlHHJ0AgBwoiUdA28WAAAGoiUecqICAHCiJR8J
+A28aAAAGoiUfCnLOAgBwoiUfCwNvDgAABqIlHwxy8AIAcKIlHw0DbxIAAAaiJR8OchoDAHCiJR8P
+A28UAAAGoiUfEHJOAwBwoigWAAAKbxcAAAoHF28YAAAKB28ZAAAKDCsNAwgWbxoAAApvOgAABghv
+GwAACi3rBm8cAAAKKh4CKD4AAAYqKgIDBAUoHQAACipSAnseAAAKAnsfAAAKFpRvIAAACioiAhYo
+IQAACipSAnseAAAKAnsfAAAKF5RvIgAACioiAhcoIQAACipSAnseAAAKAnsfAAAKGJRvIwAACioi
+AhgoIQAACipSAnseAAAKAnsfAAAKGZRvJAAACioiAhkoIQAACipSAnseAAAKAnsfAAAKGpRvJAAA
+CioiAhooIQAACipSAnseAAAKAnsfAAAKG5RvJAAACioiAhsoIQAACipSAnseAAAKAnsfAAAKHJRv
+JAAACioiAhwoIQAACipSAnseAAAKAnsfAAAKHZRvJAAACioiAh0oIQAACipSAnseAAAKAnsfAAAK
+HpRvJAAACioiAh4oIQAACipWAnseAAAKAnsfAAAKHwmUbyQAAAoqJgIfCSghAAAKKlYCex4AAAoC
+ex8AAAofCpRvJAAACiomAh8KKCEAAAoqVgJ7HgAACgJ7HwAACh8LlG8gAAAKKiYCHwsoIQAACipW
+AnseAAAKAnsfAAAKHwyUbyQAAAoqJgIfDCghAAAKKlYCex4AAAoCex8AAAofDZRvIAAACiomAh8N
+KCEAAAoqVgJ7HgAACgJ7HwAACh8OlG8iAAAKKiYCHw4oIQAACipWAnseAAAKAnsfAAAKHw+UbyMA
+AAoqJgIfDyghAAAKKlYCex4AAAoCex8AAAofEJRvJAAACiomAh8QKCEAAAoqVgJ7HgAACgJ7HwAA
+Ch8RlG8kAAAKKiYCHxEoIQAACipWAnseAAAKAnsfAAAKHxKUbyQAAAoqJgIfEighAAAKKlYCex4A
+AAoCex8AAAofE5RvJAAACiomAh8TKCEAAAoqVgJ7HgAACgJ7HwAACh8UlG8kAAAKKiYCHxQoIQAA
+CipWAnseAAAKAnsfAAAKHxWUbyQAAAoqJgIfFSghAAAKKlYCex4AAAoCex8AAAofFpRvJAAACiom
+Ah8WKCEAAAoqVgJ7HgAACgJ7HwAACh8XlG8kAAAKKiYCHxcoIQAACipWAnseAAAKAnsfAAAKHxiU
+byAAAAoqJgIfGCghAAAKKlYCex4AAAoCex8AAAofGZRvJAAACiomAh8ZKCEAAAoqKgIfGgMoJQAA
+CipeAywJAh8aKCYAAAoqclIDAHBzJwAACnoeAigoAAAKKh4CKCkAAAoqfgIoKgAACgICc0IAAAZ9
+AQAABAICc0QAAAZ9AgAABCqSBHLvAwBwGm8rAAAKLBUCBQIDKCwAAAoOBHMFAAAGb0AAAAYqSisH
+AgNvQQAABgNvPAAABi3xKgYqOgIoLQAACgIDfQMAAAQqggJ7AwAABG8uAAAKby8AAApy/wMAcG8w
+AAAKbzEAAAoqOgIoLQAACgIDfQQAAAQqHgIoLQAACiqufgUAAAQtHnIFBABw0AcAAAIoMgAACm8z
+AAAKczQAAAqABQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAABCoeAig1AAAKKi5zSgAABoAH
+AAAEKgBCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAACMCwAAI34AAPgLAACcDAAA
+I1N0cmluZ3MAAAAAlBgAAHgEAAAjVVMADB0AABAAAAAjR1VJRAAAABwdAAAIAgAAI0Jsb2IAAAAA
+AAAAAgAAAVcVogEJAQAAAPoBMwAWAAABAAAAKwAAAAgAAAAHAAAASwAAAA8AAAA1AAAAEAAAAAEA
+AAAEAAAAOgAAADsAAAABAAAABwAAAAEAAAAAAOcEAQAAAAAABgBrA4UKBgD/A4UKBgC3AnIKDwD5
+CgAABgDkAhEIBgBOAxEIBgAvAxEIBgDmAxEIBgCLAxEIBgCkAxEIBgD7AhEIBgAWA1wECgC/A9EB
+DgBQCKgLDgA/AagLDgAUCagLCgBMCdEBEgA9CdEBCgCoCNEBBgDIAcQHCgD+C9EBBgCJC8QHFgBW
+ALQJBgCaAnIKBgBdCaUKBgCcCPwHGgBqAtEEGgDLAtEEGgBMAucHBgB/AoUKDgBDCHgIBgCyBMQH
+DgA1AXgIDgD2AZQADgAHCXgIBgBeCMQHBgCLCMQHHgABANwJHgAaANwJHgA9ANwJBgAfAsQHBgB8
+AcQHBgCTDBEIAAAAAIMAAAAAAAEAAQABABAA3AcAABAAAQABAAEAEAAwCQAARQABAAUAAQAQAOAL
+AABVAAEAPgABABAAdgsAAFkAAwBCAAEAEAA3CwAAWQAEAEQAAAAQAKwKCAtZAAUARQAAARAAZgsI
+C3UABwBJAAYAdgu/AAYANwvDAAEA7gvHAAEA7gvHABEAywfLABEAPALPABEASgHTAFAgAAAAAMYA
+HQQGAAEAWCAAAAAAxgAoBAYAAQBgIAAAAADGAHAM1wABAGQhAAAAAIYYBQoGAAIAbCEAAAAAhhgF
+CkMAAgB3IQAAAACGCOoA3QAFAIwhAAAAAIYIDwU/AAUAlSEAAAAAhgiSCeEABQCqIQAAAACGCKMG
+PwAFALMhAAAAAIYIvgvlAAUAyCEAAAAAhghdBz8ABQDRIQAAAACGCAICJAAFAOYhAAAAAIYIoQU/
+AAUA7yEAAAAAhggSCiQABQAEIgAAAACGCNMGPwAFAA0iAAAAAIYIWAokAAUAIiIAAAAAhgg1Bz8A
+BQArIgAAAACGCDoEJAAFAEAiAAAAAIYI0QU/AAUASSIAAAAAhggsCiQABQBeIgAAAACGCPsGPwAF
+AGciAAAAAIYIlQckAAUAfCIAAAAAhghZBj8ABQCFIgAAAACGCLkEJAAFAJsiAAAAAIYIMwY/AAUA
+pSIAAAAAhgh2BCQABQC7IgAAAACGCAEGPwAFAMUiAAAAAIYICAHdAAUA2yIAAAAAhgg7BT8ABQDl
+IgAAAACGCFoBJAAFAPsiAAAAAIYIcQU/AAUABSMAAAAAhgj2AN0ABQAbIwAAAACGCCIFPwAFACUj
+AAAAAIYIoAnhAAUAOyMAAAAAhgi4Bj8ABQBFIwAAAACGCMwL5QAFAFsjAAAAAIYIcgc/AAUAZSMA
+AAAAhggQAiQABQB7IwAAAACGCLYFPwAFAIUjAAAAAIYIHAokAAUAmyMAAAAAhgjkBj8ABQClIwAA
+AACGCGIKJAAFALsjAAAAAIYIRgc/AAUAxSMAAAAAhghIBCQABQDbIwAAAACGCOYFPwAFAOUjAAAA
+AIYIPwokAAUA+yMAAAAAhggVBz8ABQAFJAAAAACGCKUHJAAFABskAAAAAIYIcAY/AAUAJSQAAAAA
+hgjCBCQABQA7JAAAAACGCEMGPwAFAEUkAAAAAIYIhQQkAAUAWyQAAAAAhggXBj8ABQBlJAAAAACG
+CBkB3QAFAHskAAAAAIYIUwU/AAUAhSQAAAAAhghoASQABQCbJAAAAACGCIYFPwAFAKUkAAAAAIYI
+gwkQAAUAsCQAAAAAhgiNBuoABgDIJAAAAACGAIcMPwAHANAkAAAAAIYAkAs/AAcA2CQAAAAAhhgF
+CgYABwD4JAAAAADGAFMM7wAHAB0lAAAAAMYBTAzXAAsAMCUAAAAAxgFwDNcADAAyJQAAAACGGAUK
++QANAEElAAAAAIYI2gCRAA4AYiUAAAAAhhgFCvkADgBxJQAAAACDGAUKBgAPAHklAAAAAJMIWQn/
+AA8ApSUAAAAAkwgkAgQBDwCsJQAAAACTCDACCQEPALQlAAAAAJYInAsPARAAuyUAAAAAhhgFCgYA
+EADDJQAAAACRGAsKFAEQAAAAAQCLDAAAAQBSCQAAAgBBCwAAAwC2CAAAAQA0BAAAAQA0BAAAAQCM
+AAAAAgCgAQAAAwBSCQAABAC2CAAAAQBSCQAAAQCLDAAAAQAEDAAAAQAEDAAAAQA0BAkABQoBABEA
+BQoGABkABQoKACkABQoQADEABQoQADkABQoQAEEABQoQAEkABQoQAFEABQoQAFkABQoQAGEABQoQ
+AGkABQoGAMEABQoGAOEABQoVAPEABQoGAKkAHQQGAKkAKAQGALkAmgQkAHEABQoQAPkA1wcGAHkA
+BQoGAAEBggsoAAkBYAwQAAkB8gEuAHkAIgk1ABkBrwQ6ABkBMAE/APkAZAIGAIkABQpDAIkAUglN
+AIkAQQtRAJEAeQBVAIkAhgdaAJEAbwBfAJEAxQFkAJEArwQ6AIkAuwdqAIkAjQcBACEBBQoQAIkA
+hww/AIkAkAs/AKkABQoGAAEBbwtwAKkAVQt4ALEABQoGAKkAoAB+ADEBIwiEADkBqgGKAEEBbQmR
+AEkBjgGWAEkBjwyfAMkABQqlAOkABQoGAC4ACwBBAS4AEwBKAS4AGwBpAS4AIwByAS4AKwCbAS4A
+MwCbAS4AOwCbAS4AQwByAS4ASwChAS4AUwCbAS4AWwC4AUMAYwACAuEAewACAuMAawACAgkHcwBp
+ASkHcwBpARsAAwABAAUANwAHADgACAA6AAAAAAEYAQAALAUcAQAAqgkgAQAAwgYcAQAA1gskAQAA
+fAccAQAAGgIpAQAAwAUcAQAAJgopAQAA7gYcAQAAbAopAQAAUAccAQAAUgQpAQAA8AUcAQAASQop
+AQAAHwccAQAArwcpAQAAegYcAQAAzAQpAQAATQYcAQAAjwQpAQAAIQYcAQAAIwEYAQAAXQUcAQAA
+cgEpAQAAkAUcAQAA+gAYAQAAJgUcAQAApAkgAQAAvAYcAQAA0AskAQAAdgccAQAAFAIpAQAAugUc
+AQAAIAopAQAA6AYcAQAAZgopAQAASgccAQAATAQpAQAA6gUcAQAAQwopAQAAGQccAQAAqQcpAQAA
+dAYcAQAAxgQpAQAARwYcAQAAiQQpAQAAGwYcAQAAHQEYAQAAVwUcAQAAbAEpAQAAigUcAQAAhwkp
+AQAAkQYcAQAA3gAtAQAAXQkyAQAARAI3AQAAoAs8AQIABgADAAIABwAFAAIACAAHAAIACQAJAAIA
+CgALAAIACwANAAIADAAPAAIADQARAAIADgATAAIADwAVAAIAEAAXAAIAEQAZAAIAEgAbAAIAEwAd
+AAIAFAAfAAIAFQAhAAIAFgAjAAIAFwAlAAIAGAAnAAIAGQApAAIAGgArAAIAGwAtAAIAHAAvAAIA
+HQAxAAIAHgAzAAIAHwA1AAIAIAA3AAIAIQA5AAIAIgA7AAIAIwA9AAIAJAA/AAIAJQBBAAIAJgBD
+AAIAJwBFAAIAKABHAAIAKQBJAAIAKgBLAAIAKwBNAAIALABPAAIALQBRAAIALgBTAAIALwBVAAIA
+MABXAAIAMQBZAAIAMgBbAAIAMwBdAAIANABfAAIANQBhAAIANgBjAAIANwBlAAIAOABnAAIAOQBp
+AAEAOgBrAAEAOwBtAAIAQwBvAAIARgBxAAIARwBzAAEASABzAAIASQB1AASAAAABAAAAAAAAAAAA
+AAAAALYAAAAEAAAAAAAAAAAAAACtAOEAAAAAAA0AAAAAAAAAAAAAALYADgwAAAAABAAAAAAAAAAA
+AAAArQCUAAAAAAANAAAAAAAAAAAAAAC2ACsMAAAAAA0AAAAAAAAAAAAAALYAwAgAAAAABAAAAAAA
+AAAAAAAArQDEBwAAAAANAAAAAAAAAAAAAAC2AOMIAAAAAAAAAAABAAAAtgoAAAAAAElEVFNDb21w
+b25lbnRNZXRhRGF0YTEwMABJRFRTUnVudGltZUNvbm5lY3Rpb25Db2xsZWN0aW9uMTAwAElEVFNS
+dW50aW1lQ29ubmVjdGlvbjEwMABJRFRTQ29ubmVjdGlvbk1hbmFnZXIxMDAAR2V0VUludDMyAEdl
+dFVJbnQ2NAA8TW9kdWxlPgBJbnB1dElEAFN5c3RlbS5EYXRhAGdldF9Db21wb25lbnRNZXRhRGF0
+YQBTQ18xYzU3NWVjYTI5ZDA0ZDY1YWJhOGQ2NGUzMDgyMDMxYgBnZXRfZGIAbXNjb3JsaWIAZ2V0
+X1dhZ2VuSWQAZ2V0X0NvcHlvZldhZ2VuSWQAZ2V0X09uZGVyZGVsZW5JZABnZXRfQ29weW9mT25k
+ZXJkZWxlbklkAFJlYWQARGJDb21tYW5kAFNxbENvbW1hbmQAZGVmYXVsdEluc3RhbmNlAGdldF9D
+YXRlZ29yaWUAZ2V0X0NvcHlvZkNhdGVnb3JpZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJv
+bUhhbmRsZQBJbnB1dE5hbWUAR2V0UnVudGltZUNvbm5lY3Rpb25CeU5hbWUAR2V0RGF0ZVRpbWUA
+TWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAc2V0X0NvbW1hbmRUeXBlAGdldF9XYWdl
+blR5cGUAZ2V0X0NvcHlvZldhZ2VuVHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJj
+ZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAQ2xvc2UARWRpdG9yQnJvd3NhYmxlU3Rh
+dGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0
+ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRp
+dGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0
+dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlv
+bkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVj
+dEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50
+RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBh
+dGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBnZXRfQmVrbGVk
+aW5nAGdldF9Db3B5b2ZCZWtsZWRpbmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBnZXRfVWl0
+dm9lcmluZwBnZXRfQ29weW9mVWl0dm9lcmluZwBnZXRfQ29ubmVjdGlvblN0cmluZwBHZXRTdHJp
+bmcAZ2V0X1RhYWwAZ2V0X0NvcHlvZlRhYWwAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzFjNTc1
+ZWNhMjlkMDRkNjVhYmE4ZDY0ZTMwODIwMzFiLmRsbABnZXRfV2FnZW5JZF9Jc051bGwAZ2V0X0Nv
+cHlvZldhZ2VuSWRfSXNOdWxsAGdldF9PbmRlcmRlbGVuSWRfSXNOdWxsAGdldF9Db3B5b2ZPbmRl
+cmRlbGVuSWRfSXNOdWxsAGdldF9DYXRlZ29yaWVfSXNOdWxsAGdldF9Db3B5b2ZDYXRlZ29yaWVf
+SXNOdWxsAGdldF9XYWdlblR5cGVfSXNOdWxsAGdldF9Db3B5b2ZXYWdlblR5cGVfSXNOdWxsAGdl
+dF9CZWtsZWRpbmdfSXNOdWxsAGdldF9Db3B5b2ZCZWtsZWRpbmdfSXNOdWxsAGdldF9VaXR2b2Vy
+aW5nX0lzTnVsbABnZXRfQ29weW9mVWl0dm9lcmluZ19Jc051bGwAZ2V0X1RhYWxfSXNOdWxsAGdl
+dF9Db3B5b2ZUYWFsX0lzTnVsbABnZXRfTWFhdHN5c3RlZW1fSXNOdWxsAGdldF9Db3B5b2ZNYWF0
+c3lzdGVlbV9Jc051bGwAc2V0X1N0dWtudW1tZXJfSXNOdWxsAGdldF9NaXhudW1tZXJfSXNOdWxs
+AGdldF9Db3B5b2ZNaXhudW1tZXJfSXNOdWxsAGdldF9Nb3Rvcl9Jc051bGwAZ2V0X0NvcHlvZk1v
+dG9yX0lzTnVsbABnZXRfS2xldXJJbnRlcmlldXJfSXNOdWxsAGdldF9Db3B5b2ZLbGV1ckludGVy
+aWV1cl9Jc051bGwAZ2V0X0tsZXVyX0lzTnVsbABnZXRfQ29weW9mS2xldXJfSXNOdWxsAGdldF9N
+aXhtb21lbnRfSXNOdWxsAGdldF9Db3B5b2ZNaXhtb21lbnRfSXNOdWxsAFNldE51bGwAZ2V0X01h
+YXRzeXN0ZWVtAGdldF9Db3B5b2ZNYWF0c3lzdGVlbQBzZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VN
+YW4AT3BlbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0
+aW9uAFN5c3RlbS5SZWZsZWN0aW9uAGdldF9SdW50aW1lQ29ubmVjdGlvbkNvbGxlY3Rpb24ARGJD
+b25uZWN0aW9uAFNxbENvbm5lY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTeXN0ZW0u
+RGF0YS5Db21tb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91
+dHB1dE1hcABNaWNyb3NvZnQuU3FsU2VydmVyLkRUU1J1bnRpbWVXcmFwAE1pY3Jvc29mdC5TcWxT
+ZXJ2ZXIuRFRTUGlwZWxpbmVXcmFwAERiRGF0YVJlYWRlcgBTcWxEYXRhUmVhZGVyAEV4ZWN1dGVS
+ZWFkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3Vy
+Y2VNYW5hZ2VyAGdldF9Db25uZWN0aW9uTWFuYWdlcgBzZXRfU3R1a251bW1lcgBnZXRfTWl4bnVt
+bWVyAGdldF9Db3B5b2ZNaXhudW1tZXIATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZS5X
+cmFwcGVyAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lLldyYXBwZXIALmN0b3IALmNj
+dG9yAGdldF9Nb3RvcgBnZXRfQ29weW9mTW90b3IAZ2V0X0tsZXVySW50ZXJpZXVyAGdldF9Db3B5
+b2ZLbGV1ckludGVyaWV1cgBnZXRfS2xldXIAZ2V0X0NvcHlvZktsZXVyAFN5c3RlbS5EaWFnbm9z
+dGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU0Nf
+MWM1NzVlY2EyOWQwNGQ2NWFiYThkNjRlMzA4MjAzMWIuUHJvcGVydGllcy5SZXNvdXJjZXMucmVz
+b3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDXzFjNTc1ZWNhMjlkMDRkNjVhYmE4ZDY0ZTMwODIwMzFi
+LlByb3BlcnRpZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29sdW1uSW5kZXhl
+cwBTZXR0aW5ncwBFcXVhbHMAQ29ubmVjdGlvbnMAQ29uY2F0AE9iamVjdABFbmRPZlJvd3NldABn
+ZXRfRGVmYXVsdABTeXN0ZW0uRGF0YS5TcWxDbGllbnQAZ2V0X01peG1vbWVudABnZXRfQ29weW9m
+TWl4bW9tZW50AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9uZW50AFNjcmlwdENvbXBvbmVudABN
+aWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVI
+b3N0AElucHV0MF9Qcm9jZXNzSW5wdXQAc2V0X0NvbW1hbmRUZXh0AElucHV0MF9Qcm9jZXNzSW5w
+dXRSb3cATmV4dFJvdwBnZXRfQXNzZW1ibHkAAIIvUwBFAEwARQBDAFQAIABhAHUAcwBhAG0ALgBT
+AHQAdQBrAG4AdQBtAG0AZQByACAARgBSAE8ATQAgAGQAYgBvAC4AQQB1AHQAbwBTAGEAbQBlAG4A
+cwB0AGUAbABsAGkAbgBnACAAYQB1AHMAYQBtACAATABFAEYAVAAgAEoATwBJAE4AIABkAGIAbwAu
+AE8AbgBkAGUAcgBkAGUAbABlAG4AIABvAG4AZAAgAE8ATgAgAGEAdQBzAGEAbQAuAFMAdAB1AGsA
+bgB1AG0AbQBlAHIAIAA9ACAAbwBuAGQALgBTAHQAdQBrAG4AdQBtAG0AZQByACAATABFAEYAVAAg
+AEoATwBJAE4AIABkAGIAbwAuAFMAdABvAGMAawBMAG8AYwBhAHQAaQBlAFIAYQBuAGcAZQBzACAA
+cwB0AG8AYwBrACAATwBOACAAbwBuAGQALgBTAHQAbwBjAGsAbABvAGMAYQB0AGkAZQBSAGEAbgBn
+AGUAIAA9ACAAcwB0AG8AYwBrAC4ASQBEACAATABFAEYAVAAgAEoATwBJAE4AIABkAGIAbwAuAFcA
+YQBnAGUAbgAgAHcAYQBnACAATwBOACAAYQB1AHMAYQBtAC4ATQBpAHgAbgB1AG0AbQBlAHIAIAA9
+ACAAdwBhAGcALgBNAGkAeABuAHUAbQBtAGUAcgAgAFcASABFAFIARQAgAG8AbgBkAC4AVwBhAGcA
+ZQBuAFQAeQBwAGUAIAA9ACAAACEgACYAJgAgAG8AbgBkAC4ASwBsAGUAdQByACAAPQAgAAAfIAAm
+ACYAIABvAG4AZAAuAFQAYQBhAGwAIAA9ACAAAC0gACYAJgAgAHcAYQBnAC4ATQBhAGEAdABTAHkA
+cwB0AGUAZQBtACAAPQAgAAArIAAmACYAIAB3AGEAZwAuAFUAaQB0AHYAbwBlAHIAaQBuAGcAIAA9
+ACAAACEgACYAJgAgAHcAYQBnAC4ATQBvAHQAbwByACAAPQAgAAApIAAmACYAIAB3AGEAZwAuAEIA
+ZQBrAGwAZQBkAGkAbgBnACAAPQAgAAAzIAAmACYAIAB3AGEAZwAuAEsAbABlAHUAcgBJAG4AdABl
+AHIAaQBlAHUAcgAgAD0AIAAAAzsAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABj
+AGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcA
+bgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABl
+AGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAABWQAYgAAcVMAQwBfADEAYwA1ADcANQBlAGMAYQAyADkA
+ZAAwADQAZAA2ADUAYQBiAGEAOABkADYANABlADMAMAA4ADIAMAAzADEAYgAuAFAAcgBvAHAAZQBy
+AHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAG498htittNPhZOtUHils1sABCABAQgDIAAB
+BSABARERBCABAQ4FIAEBEW0IBwMSORI9EkEDIAAOBQABDh0OBiABARGAiQQgABJBBCABDggDIAAC
+CSADARJJHQgSTQMGEkkDBh0IBCABCwgEIAECCAQgAQkIBSABEVEIBSACAQgcByACAg4RgJUFIAEd
+CAgFIAASgJkFIAASgJ0GIAESgKEOBCAAEl0IAAESgKURgKkFIAASgK0HIAIBDhKArQi3elxWGTTg
+iQiJhF3NgIDMkQMGEhQDBhIYAwYSVQMGEmUDBhJpAwYSIAUgAQESDAMgAAsDIAAJBCAAEVEEIAEB
+AgkgBAEIDhJJEk0FIAEBElUEAAASZQQAABJpBQABARJpBAAAEiADAAABAygACwMoAAIDKAAJBCgA
+EVEDKAAOBCgAEl0ECAASZQQIABJpBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRp
+b25UaHJvd3MBCAEAAgAAAAAAKAEAI1NDXzFjNTc1ZWNhMjlkMDRkNjVhYmE4ZDY0ZTMwODIwMzFi
+AAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMTcAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249
+djQuNQEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC41BAEAAAAAtAAA
+AM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwg
+VmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2
+MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQ
+QURQQURQtAAAANRFAAAAAAAAAAAAAO5FAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgRQAAAAAA
+AAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAY
+AACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAAAOwD
+AAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+AAAB
+AAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBhAHIA
+RgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAAsARM
+AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAwADAANABiADAA
+AAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBl
+AAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBfADEA
+YwA1ADcANQBlAGMAYQAyADkAZAAwADQAZAA2ADUAYQBiAGEAOABkADYANABlADMAMAA4ADIAMAAz
+ADEAYgAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAAAHAA
+KAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AMQBjADUANwA1AGUAYwBhADIAOQBk
+ADAANABkADYANQBhAGIAYQA4AGQANgA0AGUAMwAwADgAMgAwADMAMQBiAC4AZABsAGwAAABIABIA
+AQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAg
+ADIAMAAxADcAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgA
+KAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwAxAGMANQA3ADUAZQBj
+AGEAMgA5AGQAMAA0AGQANgA1AGEAYgBhADgAZAA2ADQAZQAzADAAOAAyADAAMwAxAGIALgBkAGwA
+bAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AMQBjADUANwA1AGUAYwBh
+ADIAOQBkADAANABkADYANQBhAGIAYQA4AGQANgA0AGUAMwAwADgAMgAwADMAMQBiAAAANAAIAAEA
+UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAABAEEAcwBz
+AGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAAAANgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_1c575eca29d04d65aba8d64e3082031b</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">adf7e66c738005805c8080241c27c0ed</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataShaChecksum"
+                      typeConverter="NOTBROWSABLE">0bf353e0dc04612f886a105eea1ca10ede7b7fb4</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Connections[db]"
+                      connectionManagerID="{2CAFC558-8E87-4654-8F38-AAA1177F346D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DESKTOP-HFCK7TV Dashboards]"
+                      name="db" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Wagen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Wagen_Id"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Wagen_Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Mixnummer]"
+                          cachedDataType="ui4"
+                          cachedName="Mixnummer"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Mixnummer]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Mixmoment]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Mixmoment"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Mixmoment]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[WagenType]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="WagenType"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[WagenType]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Motor]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Motor"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Motor]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Kleur]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Kleur"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Kleur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Bekleding]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Bekleding"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Bekleding]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[KleurInterieur]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="KleurInterieur"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[KleurInterieur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Maatsysteem]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Maatsysteem"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Maatsysteem]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Taal]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Taal"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Taal]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Uitvoering]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Uitvoering"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Uitvoering]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Onderdelen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Onderdelen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Onderdelen_Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Categorie]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Categorie"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Merge Join 1.Outputs[Merge Join Output].Columns[Categorie]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Wagen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Copy of Wagen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Wagen_Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Mixnummer]"
+                          cachedDataType="ui4"
+                          cachedName="Copy of Mixnummer"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mixnummer]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Mixmoment]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Copy of Mixmoment"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mixmoment]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of WagenType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of WagenType"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WagenType]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Motor]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Motor"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Motor]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Kleur]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Kleur"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kleur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Bekleding]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Bekleding"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Bekleding]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of KleurInterieur]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of KleurInterieur"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of KleurInterieur]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Maatsysteem]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Maatsysteem"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Maatsysteem]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Taal]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Taal"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Taal]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Uitvoering]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Uitvoering"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Uitvoering]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Onderdelen_Id]"
+                          cachedDataType="ui8"
+                          cachedName="Copy of Onderdelen_Id"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Onderdelen_Id]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0].Columns[Copy of Categorie]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of Categorie"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Categorie]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Stuknummer]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0].Columns[Stuknummer]"
+                          name="Stuknummer" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Foreach Loop Container\Data Flow Task\Sort"
                   componentClassID="Microsoft.Sort"
                   contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -1841,7 +3397,7 @@
                           refId="Package\Foreach Loop Container\Data Flow Task\Sort.Outputs[Sort Output].Columns[Onderdelen_Id]"
                           dataType="ui8"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Sort.Outputs[Sort Output].Columns[Onderdelen_Id]"
-                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\1:invalid"
+                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\Script Component"
                           name="Onderdelen_Id"
                           sortKeyPosition="1">
                           <properties>
@@ -1856,7 +3412,7 @@
                           refId="Package\Foreach Loop Container\Data Flow Task\Sort.Outputs[Sort Output].Columns[Wagen_Id]"
                           dataType="ui8"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Sort.Outputs[Sort Output].Columns[Wagen_Id]"
-                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\3:invalid"
+                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\668:invalid"
                           name="Wagen_Id"
                           sortKeyPosition="2">
                           <properties>
@@ -1943,7 +3499,7 @@
                           dataType="wstr"
                           length="255"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Categorie]"
-                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\2:invalid"
+                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0]"
                           name="Categorie">
                           <properties>
                             <property
@@ -1957,7 +3513,7 @@
                           refId="Package\Foreach Loop Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Onderdelen_Id]"
                           dataType="ui8"
                           lineageId="Package\Foreach Loop Container\Data Flow Task\Sort 1.Outputs[Sort Output].Columns[Onderdelen_Id]"
-                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\1:invalid"
+                          mappedColumnId="Package\Foreach Loop Container\Data Flow Task\Script Component"
                           name="Onderdelen_Id"
                           sortKeyPosition="1">
                           <properties>
@@ -4358,7 +5914,7 @@
               <paths>
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
-                  endId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Script Component.Inputs[Input 0]"
                   name="Data Conversion Output"
                   startId="Package\Foreach Loop Container\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
@@ -4401,6 +5957,11 @@
                   endId="Package\Foreach Loop Container\Data Flow Task\Sort.Inputs[Sort Input]"
                   name="Onderdelen"
                   startId="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen.Outputs[Onderdelen]" />
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Output 0]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  name="Output 0"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Script Component.Outputs[Output 0]" />
                 <path
                   refId="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output]"
                   endId="Package\Foreach Loop Container\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
@@ -4473,147 +6034,113 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="199,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen"
-          TopLeft="529.75,17.5" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel"
-          TopLeft="801.25,21.2500000000001" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
-          TopLeft="222.5,915" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1"
-          TopLeft="571.25,918.75" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2"
-          TopLeft="831.25,924.5" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3"
           TopLeft="1092.5,930.75" />
         <NodeLayout
-          Size="177,53"
-          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen"
-          TopLeft="1066.25,177.5" />
+          Size="107,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Sort 1"
+          TopLeft="842.5,176.25" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Sort 3"
+          TopLeft="692.5,391.25" />
         <NodeLayout
           Size="130,42"
           Id="Package\Foreach Loop Container\Data Flow Task\Merge Join"
           TopLeft="676.25,298.75" />
         <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 1"
+          TopLeft="571.25,918.75" />
+        <NodeLayout
           Size="98,42"
           Id="Package\Foreach Loop Container\Data Flow Task\Sort"
           TopLeft="575,173.75" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
-          TopLeft="626.625,59.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,114.25"
-              Start="0,0"
-              End="0,106.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,106.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.009453125,48.50048828125,52.01890625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="107,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Sort 1"
-          TopLeft="842.5,176.25" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
-          TopLeft="896.875,63.2500000000001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,113"
-              Start="0,0"
-              End="0,105.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,105.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-23.1896484375,47.8754882812499,46.379296875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 2"
+          TopLeft="831.25,924.5" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Multicast"
+          TopLeft="723.25,744" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdeel"
+          TopLeft="801.25,21.2500000000001" />
         <NodeLayout
           Size="107,42"
           Id="Package\Foreach Loop Container\Data Flow Task\Sort 2"
           TopLeft="1107.5,295" />
+        <NodeLayout
+          Size="177,53"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Wagen"
+          TopLeft="1066.25,177.5" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\XML Source - Onderdelen"
+          TopLeft="529.75,17.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Merge Join 1"
+          TopLeft="692.5,536.25" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="222.5,915" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Data Conversion"
+          TopLeft="688.25,604.5" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
-          TopLeft="1157.875,230.5">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output3]"
+          TopLeft="1161,337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.4999999999998"
+              EndConnector="-377.166666666667,199.25"
               Start="0,0"
-              End="0,56.9999999999998">
+              End="-377.166666666667,191.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.9999999999998" />
+                    End="0,114.189544807966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,114.189544807966"
+                    Point2="0,118.189544807966"
+                    Point3="-4,118.189544807966" />
+                  <mssgle:LineSegment
+                    End="-373.166666666667,118.189544807966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-373.166666666667,118.189544807966"
+                    Point2="-377.166666666667,118.189544807966"
+                    Point3="-377.166666666667,122.189544807966" />
+                  <mssgle:LineSegment
+                    End="-377.166666666667,191.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.942109375,22.8320312499999,31.88421875,11.3359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output]"
-          TopLeft="896,218.25">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output2]"
+          TopLeft="743.083333333333,433.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-134.416666666667,80.5000000000001"
+              EndConnector="0,103"
               Start="0,0"
-              End="-134.416666666667,73.0000000000001">
+              End="0,95.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.7127659574469" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.7127659574469"
-                    Point2="0,47.7127659574469"
-                    Point3="-4,47.7127659574469" />
-                  <mssgle:LineSegment
-                    End="-130.416666666667,47.7127659574469" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-130.416666666667,47.7127659574469"
-                    Point2="-134.416666666667,47.7127659574469"
-                    Point3="-134.416666666667,51.7127659574469" />
-                  <mssgle:LineSegment
-                    End="-134.416666666667,73.0000000000001" />
+                    End="0,95.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4656,10 +6183,246 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Sort 3"
-          TopLeft="692.5,391.25" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output]"
+          TopLeft="896,218.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-134.416666666667,80.5000000000001"
+              Start="0,0"
+              End="-134.416666666667,73.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.7127659574469" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.7127659574469"
+                    Point2="0,47.7127659574469"
+                    Point3="-4,47.7127659574469" />
+                  <mssgle:LineSegment
+                    End="-130.416666666667,47.7127659574469" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-130.416666666667,47.7127659574469"
+                    Point2="-134.416666666667,47.7127659574469"
+                    Point3="-134.416666666667,51.7127659574469" />
+                  <mssgle:LineSegment
+                    End="-134.416666666667,73.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdelen]"
+          TopLeft="626.625,59.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,114.25"
+              Start="0,0"
+              End="0,106.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,106.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.009453125,48.50048828125,52.01890625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Onderdeel]"
+          TopLeft="896.875,63.2500000000001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,113"
+              Start="0,0"
+              End="0,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.1896484375,47.8754882812499,46.379296875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 4]"
+          TopLeft="816.85,786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="361.15,144.75"
+              Start="0,0"
+              End="361.15,137.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2291666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.2291666666666"
+                    Point2="0,44.2291666666666"
+                    Point3="4,44.2291666666666" />
+                  <mssgle:LineSegment
+                    End="357.15,44.2291666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="357.15,44.2291666666666"
+                    Point2="361.15,44.2291666666666"
+                    Point3="361.15,48.2291666666666" />
+                  <mssgle:LineSegment
+                    End="361.15,137.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 3]"
+          TopLeft="794.45,786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="122.3,138.5"
+              Start="0,0"
+              End="122.3,131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.1213235294117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.1213235294117"
+                    Point2="0,62.1213235294117"
+                    Point3="4,62.1213235294117" />
+                  <mssgle:LineSegment
+                    End="118.3,62.1213235294117" />
+                  <mssgle:CubicBezierSegment
+                    Point1="118.3,62.1213235294117"
+                    Point2="122.3,62.1213235294117"
+                    Point3="122.3,66.1213235294117" />
+                  <mssgle:LineSegment
+                    End="122.3,131" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 2]"
+          TopLeft="772.05,786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.3,132.75"
+              Start="0,0"
+              End="-115.3,125.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5422794117647" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.5422794117647"
+                    Point2="0,59.5422794117647"
+                    Point3="-4,59.5422794117647" />
+                  <mssgle:LineSegment
+                    End="-111.3,59.5422794117647" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.3,59.5422794117647"
+                    Point2="-115.3,59.5422794117647"
+                    Point3="-115.3,63.5422794117647" />
+                  <mssgle:LineSegment
+                    End="-115.3,125.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 1]"
+          TopLeft="749.65,786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-441.65,129"
+              Start="0,0"
+              End="-441.65,121.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4166666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.4166666666666"
+                    Point2="0,39.4166666666666"
+                    Point3="-4,39.4166666666666" />
+                  <mssgle:LineSegment
+                    End="-437.65,39.4166666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-437.65,39.4166666666666"
+                    Point2="-441.65,39.4166666666666"
+                    Point3="-441.65,43.4166666666666" />
+                  <mssgle:LineSegment
+                    End="-441.65,121.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Merge Join Output1]"
+          TopLeft="764.125,578.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.25"
+              Start="0,0"
+              End="0,18.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Merge Join Output]"
           TopLeft="743.625,340.75">
@@ -4682,110 +6445,48 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Merge Join 1"
-          TopLeft="692.5,536.25" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output2]"
-          TopLeft="743.083333333333,433.25">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Wagen]"
+          TopLeft="1157.875,230.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,103"
+              EndConnector="0,64.4999999999998"
               Start="0,0"
-              End="0,95.5">
+              End="0,56.9999999999998">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.5" />
+                    End="0,56.9999999999998" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Sort Output3]"
-          TopLeft="1161,337">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-377.166666666667,199.25"
-              Start="0,0"
-              End="-377.166666666667,191.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,114.189544807966" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,114.189544807966"
-                    Point2="0,118.189544807966"
-                    Point3="-4,118.189544807966" />
-                  <mssgle:LineSegment
-                    End="-373.166666666667,118.189544807966" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-373.166666666667,118.189544807966"
-                    Point2="-377.166666666667,118.189544807966"
-                    Point3="-377.166666666667,122.189544807966" />
-                  <mssgle:LineSegment
-                    End="-377.166666666667,191.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-15.942109375,22.8320312499999,31.88421875,11.3359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="156,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Data Conversion"
-          TopLeft="686.25,657.5" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Merge Join Output1]"
-          TopLeft="763.125,578.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79.25"
-              Start="0,0"
-              End="0,71.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\Multicast"
-          TopLeft="701.25,745" />
+          Size="163,42"
+          Id="Package\Foreach Loop Container\Data Flow Task\Script Component"
+          TopLeft="683,670" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="762.75,699.5">
+          TopLeft="765.375,646.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.5"
+              EndConnector="0,23.5"
               Start="0,0"
-              End="0,38">
+              End="0,16">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38" />
+                    End="0,16" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4795,133 +6496,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 1]"
-          TopLeft="761.25,787">
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Output 0]"
+          TopLeft="764.5,712">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-453.25,128"
+              EndConnector="18.75,32"
               Start="0,0"
-              End="-453.25,120.5">
+              End="18.75,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35" />
+                    End="0,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="-4,39" />
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
                   <mssgle:LineSegment
-                    End="-449.25,39" />
+                    End="14.75,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="-449.25,39"
-                    Point2="-453.25,39"
-                    Point3="-453.25,43" />
+                    Point1="14.75,16"
+                    Point2="18.75,16"
+                    Point3="18.75,20" />
                   <mssgle:LineSegment
-                    End="-453.25,120.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 2]"
-          TopLeft="779.916666666667,787">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-123.166666666667,131.75"
-              Start="0,0"
-              End="-123.166666666667,124.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.7401315789474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.7401315789474"
-                    Point2="0,53.7401315789474"
-                    Point3="-4,53.7401315789474" />
-                  <mssgle:LineSegment
-                    End="-119.166666666667,53.7401315789474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-119.166666666667,53.7401315789474"
-                    Point2="-123.166666666667,53.7401315789474"
-                    Point3="-123.166666666667,57.7401315789474" />
-                  <mssgle:LineSegment
-                    End="-123.166666666667,124.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 3]"
-          TopLeft="789.25,787">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127.5,137.5"
-              Start="0,0"
-              End="127.5,130">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.8260869565217" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.8260869565217"
-                    Point2="0,47.8260869565217"
-                    Point3="4,47.8260869565217" />
-                  <mssgle:LineSegment
-                    End="123.5,47.8260869565217" />
-                  <mssgle:CubicBezierSegment
-                    Point1="123.5,47.8260869565217"
-                    Point2="127.5,47.8260869565217"
-                    Point3="127.5,51.8260869565217" />
-                  <mssgle:LineSegment
-                    End="127.5,130" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Multicast Output 4]"
-          TopLeft="794.85,787">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="383.15,143.75"
-              Start="0,0"
-              End="383.15,136.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.9236111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.9236111111111"
-                    Point2="0,43.9236111111111"
-                    Point3="4,43.9236111111111" />
-                  <mssgle:LineSegment
-                    End="379.15,43.9236111111111" />
-                  <mssgle:CubicBezierSegment
-                    Point1="379.15,43.9236111111111"
-                    Point2="383.15,43.9236111111111"
-                    Point3="383.15,47.9236111111111" />
-                  <mssgle:LineSegment
-                    End="383.15,136.25" />
+                    End="18.75,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4934,7 +6533,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4960,7 +6559,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination 3">
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
