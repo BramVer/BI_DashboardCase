@@ -3,26 +3,26 @@
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DashboardDB">
+    <DataSource Name="Dashboards">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=.;Initial Catalog=Dashboards</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>0302e857-1ef9-44e3-8812-b8604632c5cb</rd:DataSourceID>
+      <rd:DataSourceID>b98da967-3d58-4cbf-a2c0-b67a75e101eb</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Dashboards">
       <Query>
-        <DataSourceName>DashboardDB</DataSourceName>
+        <DataSourceName>Dashboards</DataSourceName>
         <QueryParameters>
           <QueryParameter Name="@MixNr">
-            <Value>11236853</Value>
+            <Value>=Parameters!MixNr.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT TOP 100
+        <CommandText>SELECT 
 	autosam.Mixnummer,
 	stock.Naam AS Locatie,
 	onder.Categorie,
@@ -73,16 +73,46 @@ WHERE
     <ReportSection>
       <Body>
         <ReportItems>
+          <Textbox Name="textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Picklist</Value>
+                    <Style>
+                      <FontFamily>Segoe UI Light</FontFamily>
+                      <FontSize>24pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>textbox1</rd:DefaultName>
+            <Top>1.18181cm</Top>
+            <Left>0.87312cm</Left>
+            <Height>0.43in</Height>
+            <Width>3.70833in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
           <Tablix Name="List1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.71875in</Width>
+                  <Width>5.34375in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.04875in</Height>
+                  <Height>1.45806in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -113,8 +143,7 @@ WHERE
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Mixnummer</rd:DefaultName>
-                              <Top>0.30163cm</Top>
-                              <Left>0.47625cm</Left>
+                              <Top>0.72319cm</Top>
                               <Height>0.27in</Height>
                               <Width>5in</Width>
                               <Style>
@@ -129,19 +158,19 @@ WHERE
                               <TablixBody>
                                 <TablixColumns>
                                   <TablixColumn>
-                                    <Width>0.625in</Width>
+                                    <Width>1in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.39583in</Width>
+                                    <Width>1in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>1.41667in</Width>
+                                    <Width>1in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>2.21875in</Width>
+                                    <Width>1in</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>0.6875in</Width>
+                                    <Width>1in</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -559,23 +588,22 @@ WHERE
                                   </TablixMember>
                                 </TablixMembers>
                               </TablixRowHierarchy>
-                              <DataSetName>DataSet1</DataSetName>
-                              <Top>0.61875in</Top>
-                              <Left>0.47625cm</Left>
+                              <DataSetName>Dashboards</DataSetName>
+                              <Top>0.59639in</Top>
                               <Height>0.43in</Height>
-                              <Width>6.34375in</Width>
+                              <Width>5in</Width>
                               <ZIndex>1</ZIndex>
                               <Style>
                                 <FontFamily />
                               </Style>
                             </Tablix>
-                            <Image Name="Image3">
+                            <Image Name="Image2">
                               <Source>Embedded</Source>
                               <Value>picklist_logo</Value>
                               <Sizing>FitProportional</Sizing>
-                              <Left>6.03125in</Left>
-                              <Height>0.5in</Height>
-                              <Width>0.5in</Width>
+                              <Left>4.19792in</Left>
+                              <Height>0.59639in</Height>
+                              <Width>0.80208in</Width>
                               <ZIndex>2</ZIndex>
                               <Style>
                                 <Border>
@@ -619,22 +647,24 @@ WHERE
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>Dashboards</DataSetName>
             <PageBreak>
               <BreakLocation>End</BreakLocation>
             </PageBreak>
-            <Top>0.43in</Top>
-            <Height>1.04875in</Height>
-            <Width>6.71875in</Width>
+            <Top>0.62444in</Top>
+            <Left>0.87312cm</Left>
+            <Height>1.45806in</Height>
+            <Width>5.34375in</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <FontSize>14pt</FontSize>
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.47875in</Height>
+        <Height>2.0825in</Height>
         <Style />
       </Body>
-      <Width>6.71875in</Width>
+      <Width>5.6875in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -644,10 +674,23 @@ WHERE
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="MixNr">
+      <DataType>String</DataType>
+      <Prompt>Mix Nr</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>MixNr</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>
@@ -666,5 +709,5 @@ C6YXyZS8j8tU92XnJcOhJTpnsUXyg8oMSm8SjUZUZqH4/y0WIOPHD56MltPkxxtXyIjgChkRXCEjgitk
   <Language>en-US</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>38714086-da20-47b9-ba85-d1afd0ebc5c7</rd:ReportID>
+  <rd:ReportID>f7b7ba70-4cc8-451a-8ecd-444c7717aa6a</rd:ReportID>
 </Report>

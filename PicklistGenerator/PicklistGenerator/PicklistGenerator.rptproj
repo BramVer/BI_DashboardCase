@@ -5,8 +5,8 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>Report1.rdl</Name>
-      <FullPath>Report1.rdl</FullPath>
+      <Name>Picklist.rdl</Name>
+      <FullPath>Picklist.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
