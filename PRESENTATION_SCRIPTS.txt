@@ -1,0 +1,14 @@
+DELETE
+FROM [Dashboards].[dbo].[AutoSamenstelling]
+WHERE [Dashboards].[dbo].[AutoSamenstelling].Mixnummer = 13844721 
+OR [Dashboards].[dbo].[AutoSamenstelling].Mixnummer = 13844722
+OR [Dashboards].[dbo].[AutoSamenstelling].Mixnummer = 13844723
+OR [Dashboards].[dbo].[AutoSamenstelling].Mixnummer = 13844724;
+
+DELETE
+FROM [Dashboards].[dbo].[Wagen]
+WHERE [Dashboards].[dbo].[Wagen].Mixnummer = 13844721
+OR [Dashboards].[dbo].[Wagen].Mixnummer = 13844722
+OR [Dashboards].[dbo].[Wagen].Mixnummer = 13844723
+OR [Dashboards].[dbo].[Wagen].Mixnummer = 13844724;
+

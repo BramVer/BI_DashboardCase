@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <StartObjectID>Source to DWH.dtsx</StartObjectID>
+        <StartObjectID>XML to Source.dtsx</StartObjectID>
         <Run64BitRuntime>true</Run64BitRuntime>
         <UserIDs />
         <UserPasswords />

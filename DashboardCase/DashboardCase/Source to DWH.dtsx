@@ -11,8 +11,8 @@
   DTS:LocaleID="2067"
   DTS:ObjectName="Source to DWH"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{633CA9C5-F419-41C0-894E-4129BFD0FE59}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{EA461798-DCEE-4FB4-BC5F-477C5AF4F699}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9038,79 +9038,79 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Fill dimensions\Multicast.Outputs[Multicast Output 2]" />
             <path
               refId="Package\Fill dimensions.Paths[OLE DB Source Output9]"
-              endId="Package\Fill dimensions\DWH - Dim_Onderdeelscategorie.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Onderdeelscategorie.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output8]"
-              endId="Package\Fill dimensions\Script Component.Inputs[Input 0]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Kleur.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output7]"
-              endId="Package\Fill dimensions\DWH - Dim_Taal.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Taal.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output6]"
-              endId="Package\Fill dimensions\DWH - Dim_Bekleding.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Bekleding.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output5]"
-              endId="Package\Fill dimensions\DWH - Dim_Uitvoering.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Uitvoering.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output3]"
-              endId="Package\Fill dimensions\DWH - Dim_Maatsysteem.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Maatsysteem.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output2]"
-              endId="Package\Fill dimensions\Splitter.Inputs[Input 0]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Tijdstip.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output1]"
-              endId="Package\Fill dimensions\DWH - Dim_Onderdeel.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - Onderdeel.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output]"
-              endId="Package\Fill dimensions\DWH - Dim_WagenType.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Fill dimensions\Dashboards - WagenType.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Fill dimensions.Paths[OLE DB Source Output4]"
               endId="Package\Fill dimensions\DWH - Dim_Motor.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Fill dimensions\Dashboards - Motor.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output8]"
+              endId="Package\Fill dimensions\DWH - Dim_WagenType.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - WagenType.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output7]"
+              endId="Package\Fill dimensions\DWH - Dim_Onderdeel.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Onderdeel.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output6]"
+              endId="Package\Fill dimensions\Splitter.Inputs[Input 0]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Tijdstip.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output5]"
+              endId="Package\Fill dimensions\DWH - Dim_Maatsysteem.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Maatsysteem.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output3]"
+              endId="Package\Fill dimensions\DWH - Dim_Bekleding.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Bekleding.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output2]"
+              endId="Package\Fill dimensions\DWH - Dim_Taal.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Taal.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output1]"
+              endId="Package\Fill dimensions\Script Component.Inputs[Input 0]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Kleur.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output]"
+              endId="Package\Fill dimensions\DWH - Dim_Onderdeelscategorie.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Onderdeelscategorie.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Fill dimensions.Paths[OLE DB Source Output4]"
+              endId="Package\Fill dimensions\DWH - Dim_Uitvoering.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Fill dimensions\Dashboards - Uitvoering.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Fill dimensions.Paths[Output 04]"
+              endId="Package\Fill dimensions\DWH - Dim_MixTijdstip.Inputs[OLE DB Destination Input]"
+              name="Output 0"
+              startId="Package\Fill dimensions\Script - Tijd.Outputs[Output 0]" />
+            <path
+              refId="Package\Fill dimensions.Paths[Output 0]"
               endId="Package\Fill dimensions\DWH - Dim_MixDag.Inputs[OLE DB Destination Input]"
               name="Output 0"
               startId="Package\Fill dimensions\Script - Datum.Outputs[Output 0]" />
             <path
-              refId="Package\Fill dimensions.Paths[Output 0]"
+              refId="Package\Fill dimensions.Paths[Output 01]"
               endId="Package\Fill dimensions\DWH - Dim_Prijscategorie.Inputs[OLE DB Destination Input]"
               name="Output 0"
               startId="Package\Fill dimensions\Script -  Prijscategorie.Outputs[Output 0]" />
             <path
-              refId="Package\Fill dimensions.Paths[Output 01]"
+              refId="Package\Fill dimensions.Paths[Output 02]"
               endId="Package\Fill dimensions\DWH - Dim_Afstandscategorie.Inputs[OLE DB Destination Input]"
               name="Output 0"
               startId="Package\Fill dimensions\Script -  Afstandscategorie.Outputs[Output 0]" />
             <path
-              refId="Package\Fill dimensions.Paths[Output 02]"
+              refId="Package\Fill dimensions.Paths[Output 03]"
               endId="Package\Fill dimensions\Multicast.Inputs[Multicast Input 1]"
               name="Output 0"
               startId="Package\Fill dimensions\Splitter.Outputs[Output 0]" />
-            <path
-              refId="Package\Fill dimensions.Paths[Output 03]"
-              endId="Package\Fill dimensions\DWH - Dim_MixTijdstip.Inputs[OLE DB Destination Input]"
-              name="Output 0"
-              startId="Package\Fill dimensions\Script - Tijd.Outputs[Output 0]" />
             <path
               refId="Package\Fill dimensions.Paths[Output 05]"
               endId="Package\Fill dimensions\DWH - Dim_Kleur.Inputs[OLE DB Destination Input]"
@@ -16069,75 +16069,75 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </components>
           <paths>
             <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output7]"
+              refId="Package\Fill Facttable.Paths[Lookup Match Output]"
               endId="Package\Fill Facttable\Lookup MixDag_ID.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fill Facttable\Lookup Tijdstip_ID.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output]"
-              endId="Package\Fill Facttable\Lookup Taal_ID.Inputs[Lookup Input]"
+              refId="Package\Fill Facttable.Paths[Lookup Match Output13]"
+              endId="Package\Fill Facttable\Script Afstandscategorie.Inputs[Input 0]"
               name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Kleur_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output1]"
-              endId="Package\Fill Facttable\Lookup Locatie_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Taal_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output2]"
-              endId="Package\Fill Facttable\Lookup Bekleding_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Locatie_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output3]"
-              endId="Package\Fill Facttable\Lookup Uitvoering_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Bekleding_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output4]"
-              endId="Package\Fill Facttable\Lookup Motor_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Uitvoering_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output5]"
-              endId="Package\Fill Facttable\Script Prijscategorie_ID.Inputs[Input 0]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Motor_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output6]"
-              endId="Package\Fill Facttable\Script Momentopdeling.Inputs[Input 0]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Onderdeelscategorie_ID.Outputs[Lookup Match Output]" />
+              startId="Package\Fill Facttable\Lookup Prijscategorie_ID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fill Facttable.Paths[Lookup Match Output12]"
-              endId="Package\Fill Facttable\Lookup Onderdeelscategorie_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Afstandscategorie_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output13]"
-              endId="Package\Fill Facttable\Script Totaalprijs.Inputs[Input 0]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Maatsysteem_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output8]"
-              endId="Package\Fill Facttable\Lookup WagenType_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup MixDag_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output9]"
-              endId="Package\Fill Facttable\Lookup Onderdeel_ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup WagenType_ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Lookup Match Output10]"
               endId="Package\Fill Facttable\Lookup Maatsysteem_ID.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fill Facttable\Lookup Onderdeel_ID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fill Facttable.Paths[Lookup Match Output11]"
-              endId="Package\Fill Facttable\Script Afstandscategorie.Inputs[Input 0]"
+              endId="Package\Fill Facttable\Lookup Onderdeel_ID.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Fill Facttable\Lookup Prijscategorie_ID.Outputs[Lookup Match Output]" />
+              startId="Package\Fill Facttable\Lookup WagenType_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output10]"
+              endId="Package\Fill Facttable\Lookup WagenType_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup MixDag_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output8]"
+              endId="Package\Fill Facttable\Lookup Onderdeelscategorie_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Afstandscategorie_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output7]"
+              endId="Package\Fill Facttable\Script Momentopdeling.Inputs[Input 0]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Onderdeelscategorie_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output9]"
+              endId="Package\Fill Facttable\Script Totaalprijs.Inputs[Input 0]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Maatsysteem_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output5]"
+              endId="Package\Fill Facttable\Lookup Motor_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Uitvoering_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output4]"
+              endId="Package\Fill Facttable\Lookup Uitvoering_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Bekleding_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output3]"
+              endId="Package\Fill Facttable\Lookup Bekleding_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Locatie_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output2]"
+              endId="Package\Fill Facttable\Lookup Locatie_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Taal_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output1]"
+              endId="Package\Fill Facttable\Lookup Taal_ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Kleur_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Lookup Match Output6]"
+              endId="Package\Fill Facttable\Script Prijscategorie_ID.Inputs[Input 0]"
+              name="Lookup Match Output"
+              startId="Package\Fill Facttable\Lookup Motor_ID.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fill Facttable.Paths[OLE DB Source Output]"
               endId="Package\Fill Facttable\Lookup Kleur_ID.Inputs[Lookup Input]"
@@ -16145,19 +16145,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               startId="Package\Fill Facttable\Dashboards - All joined.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Fill Facttable.Paths[Output 02]"
+              endId="Package\Fill Facttable\Lookup Prijscategorie_ID.Inputs[Lookup Input]"
+              name="Output 0"
+              startId="Package\Fill Facttable\Script Prijscategorie_ID.Outputs[Output 0]" />
+            <path
+              refId="Package\Fill Facttable.Paths[Output 0]"
               endId="Package\Fill Facttable\Lookup Afstandscategorie_ID.Inputs[Lookup Input]"
               name="Output 0"
               startId="Package\Fill Facttable\Script Afstandscategorie.Outputs[Output 0]" />
             <path
-              refId="Package\Fill Facttable.Paths[Output 0]"
+              refId="Package\Fill Facttable.Paths[Output 01]"
               endId="Package\Fill Facttable\Lookup Tijdstip_ID.Inputs[Lookup Input]"
               name="Output 0"
               startId="Package\Fill Facttable\Script Momentopdeling.Outputs[Output 0]" />
-            <path
-              refId="Package\Fill Facttable.Paths[Output 01]"
-              endId="Package\Fill Facttable\Lookup Prijscategorie_ID.Inputs[Lookup Input]"
-              name="Output 0"
-              startId="Package\Fill Facttable\Script Prijscategorie_ID.Outputs[Output 0]" />
             <path
               refId="Package\Fill Facttable.Paths[Output 03]"
               endId="Package\Fill Facttable\DWH - Fact.Inputs[OLE DB Destination Input]"
@@ -16235,7 +16235,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="188,42"
           Id="Package\Fill dimensions\DWH - Dim_MixTijdstip"
-          TopLeft="2183,369" />
+          TopLeft="590.5,634" />
         <NodeLayout
           Size="203,42"
           Id="Package\Fill dimensions\Script -  Afstandscategorie"
@@ -16247,7 +16247,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="193,42"
           Id="Package\Fill dimensions\Dashboards - Onderdeel"
-          TopLeft="2824,58" />
+          TopLeft="1231.5,323" />
         <NodeLayout
           Size="147,42"
           Id="Package\Fill dimensions\Excel - Locatie"
@@ -16267,11 +16267,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="179,42"
           Id="Package\Fill dimensions\Dashboards - Tijdstip"
-          TopLeft="2280,59" />
+          TopLeft="687.5,324" />
         <NodeLayout
           Size="235,42"
           Id="Package\Fill dimensions\DWH - Dim_Onderdeelscategorie"
-          TopLeft="1952,242" />
+          TopLeft="359.5,507" />
         <NodeLayout
           Size="172,42"
           Id="Package\Fill dimensions\Dashboards - Motor"
@@ -16279,11 +16279,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="194,42"
           Id="Package\Fill dimensions\DWH - Dim_WagenType"
-          TopLeft="2603,246" />
+          TopLeft="1010.5,511" />
         <NodeLayout
           Size="173,42"
           Id="Package\Fill dimensions\DWH - Dim_MixDag"
-          TopLeft="2401,369" />
+          TopLeft="808.5,634" />
         <NodeLayout
           Size="183,42"
           Id="Package\Fill dimensions\DWH - Dim_Bekleding"
@@ -16291,15 +16291,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="147,42"
           Id="Package\Fill dimensions\Script - Datum"
-          TopLeft="2407,288" />
+          TopLeft="814.5,553" />
         <NodeLayout
           Size="206,42"
           Id="Package\Fill dimensions\Dashboards - Maatsysteem"
-          TopLeft="3040,57" />
+          TopLeft="1447.5,322" />
         <NodeLayout
           Size="186,42"
           Id="Package\Fill dimensions\DWH - Dim_Onderdeel"
-          TopLeft="2828,245" />
+          TopLeft="1235.5,510" />
         <NodeLayout
           Size="186,42"
           Id="Package\Fill dimensions\DWH - Dim_Uitvoering"
@@ -16307,7 +16307,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="200,42"
           Id="Package\Fill dimensions\DWH - Dim_Maatsysteem"
-          TopLeft="3045,242" />
+          TopLeft="1452.5,507" />
         <NodeLayout
           Size="222,42"
           Id="Package\Fill dimensions\DWH - Dim_Afstandscategorie"
@@ -16323,7 +16323,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="134,42"
           Id="Package\Fill dimensions\Script - Tijd"
-          TopLeft="2216,287" />
+          TopLeft="623.5,552" />
         <NodeLayout
           Size="156,42"
           Id="Package\Fill dimensions\Data Conversion"
@@ -16331,7 +16331,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="241,42"
           Id="Package\Fill dimensions\Dashboards - Onderdeelscategorie"
-          TopLeft="1945,58" />
+          TopLeft="352.5,323" />
         <NodeLayout
           Size="165,42"
           Id="Package\Fill dimensions\DWH - Dim_Motor"
@@ -16343,7 +16343,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="120,42"
           Id="Package\Fill dimensions\Multicast"
-          TopLeft="2316,208" />
+          TopLeft="723.5,473" />
         <NodeLayout
           Size="171,42"
           Id="Package\Fill dimensions\DWH - Dim_Locatie"
@@ -16351,7 +16351,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="112,42"
           Id="Package\Fill dimensions\Splitter"
-          TopLeft="2316,133" />
+          TopLeft="723.5,398" />
         <NodeLayout
           Size="190,42"
           Id="Package\Fill dimensions\Dashboards - Bekleding"
@@ -16359,7 +16359,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="201,42"
           Id="Package\Fill dimensions\Dashboards - WagenType"
-          TopLeft="2594,60" />
+          TopLeft="1001.5,325" />
         <EdgeLayout
           Id="Package\Fill dimensions.Paths[Output 05]"
           TopLeft="383.25,185">
@@ -16384,29 +16384,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fill dimensions.Paths[Output 04]"
-          TopLeft="2484,330">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[Output 03]"
-          TopLeft="2280,329">
+          TopLeft="687.5,594">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16427,8 +16405,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill dimensions.Paths[Output 02]"
-          TopLeft="2374,175">
+          Id="Package\Fill dimensions.Paths[Output 03]"
+          TopLeft="781.5,440">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16449,7 +16427,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill dimensions.Paths[Output 01]"
+          Id="Package\Fill dimensions.Paths[Output 02]"
           TopLeft="1821.25,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16471,7 +16449,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill dimensions.Paths[Output 0]"
+          Id="Package\Fill dimensions.Paths[Output 01]"
           TopLeft="1574,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16493,117 +16471,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Fill dimensions.Paths[Output 0]"
+          TopLeft="891.5,595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Fill dimensions.Paths[OLE DB Source Output9]"
-          TopLeft="2067.5,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,142"
-              Start="0,0"
-              End="0,134.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,134.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output8]"
-          TopLeft="382.5,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output7]"
-          TopLeft="566.25,99">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,132"
-              Start="0,0"
-              End="0,124.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,124.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output6]"
-          TopLeft="942.25,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,137"
-              Start="0,0"
-              End="0,129.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,129.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output5]"
-          TopLeft="1153.25,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,134"
-              Start="0,0"
-              End="0,126.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,126.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output4]"
           TopLeft="1355.75,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -16625,74 +16515,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output3]"
-          TopLeft="3144,99">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,143"
-              Start="0,0"
-              End="0,135.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,135.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output2]"
-          TopLeft="2370.75,101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output1]"
-          TopLeft="2920.75,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,145"
-              Start="0,0"
-              End="0,137.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,137.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill dimensions.Paths[OLE DB Source Output]"
-          TopLeft="2697.25,102">
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output8]"
+          TopLeft="1104.75,367">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16713,8 +16537,184 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output7]"
+          TopLeft="1328.25,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,145"
+              Start="0,0"
+              End="0,137.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,137.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output6]"
+          TopLeft="778.25,366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output5]"
+          TopLeft="1551.5,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,143"
+              Start="0,0"
+              End="0,135.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,135.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output4]"
+          TopLeft="1153.25,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,134"
+              Start="0,0"
+              End="0,126.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,126.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output3]"
+          TopLeft="942.25,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,137"
+              Start="0,0"
+              End="0,129.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,129.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output2]"
+          TopLeft="566.25,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,132"
+              Start="0,0"
+              End="0,124.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,124.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output1]"
+          TopLeft="382.5,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill dimensions.Paths[OLE DB Source Output]"
+          TopLeft="475,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,142"
+              Start="0,0"
+              End="0,134.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,134.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Fill dimensions.Paths[Multicast Output 2]"
-          TopLeft="2394.66666666667,250">
+          TopLeft="802.16666666667,515">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16748,7 +16748,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fill dimensions.Paths[Multicast Output 1]"
-          TopLeft="2357.33333333333,250">
+          TopLeft="764.83333333333,515">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17113,13 +17113,173 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="188,42"
-          Id="Package\Fill Facttable\Dashboards - All joined"
-          TopLeft="28,31" />
+          Size="133,42"
+          Id="Package\Fill Facttable\DWH - Fact"
+          TopLeft="1963,31.75" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Fill Facttable\Lookup Uitvoering_ID"
+          TopLeft="287.25,27.25" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Fill Facttable\Lookup MixDag_ID"
+          TopLeft="1161,240" />
         <NodeLayout
           Size="158,42"
           Id="Package\Fill Facttable\Lookup Kleur_ID"
           TopLeft="44,127" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Fill Facttable\Lookup Prijscategorie_ID"
+          TopLeft="535,236.25" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Fill Facttable\Lookup Motor_ID"
+          TopLeft="552.5,25.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Fill Facttable\Script Momentopdeling"
+          TopLeft="1139,24.25" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Fill Facttable\Script Totaalprijs"
+          TopLeft="1736.25,31.25" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Fill Facttable\Lookup WagenType_ID"
+          TopLeft="1423,246.75" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Fill Facttable\Lookup Locatie_ID"
+          TopLeft="289.5,235.75" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Fill Facttable\Lookup Taal_ID"
+          TopLeft="45,234.75" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Fill Facttable\Lookup Onderdeelscategorie_ID"
+          TopLeft="810.5,25.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Fill Facttable\Lookup Afstandscategorie_ID"
+          TopLeft="813.75,135" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Fill Facttable\Script Afstandscategorie"
+          TopLeft="826.25,235.5" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Fill Facttable\Script Prijscategorie_ID"
+          TopLeft="541.25,132.75" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Fill Facttable\Lookup Maatsysteem_ID"
+          TopLeft="1423.5,30" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Fill Facttable\Lookup Tijdstip_ID"
+          TopLeft="1154.75,145.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Fill Facttable\Lookup Onderdeel_ID"
+          TopLeft="1426.5,143" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Fill Facttable\Dashboards - All joined"
+          TopLeft="28,31" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Fill Facttable\Lookup Bekleding_ID"
+          TopLeft="287.25,128" />
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Output 03]"
+          TopLeft="1894.25,52.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.75,0"
+              Start="0,0"
+              End="61.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.25,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Output 02]"
+          TopLeft="634.625,174.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.5"
+              Start="0,0"
+              End="0,54">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Output 01]"
+          TopLeft="1235.625,66.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79.25"
+              Start="0,0"
+              End="0,71.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Output 0]"
+          TopLeft="922.5,235.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-58.5"
+              Start="0,0"
+              End="0,-51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fill Facttable.Paths[OLE DB Source Output]"
           TopLeft="122.5,73">
@@ -17142,380 +17302,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Fill Facttable\Lookup Taal_ID"
-          TopLeft="45,234.75" />
         <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output]"
-          TopLeft="122.25,169">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.75"
-              Start="0,0"
-              End="0,58.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,23.3203125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Fill Facttable\Lookup Locatie_ID"
-          TopLeft="289.5,235.75" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output1]"
-          TopLeft="198,256.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="91.5,0"
-              Start="0,0"
-              End="84,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="84,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-6.19138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Fill Facttable\Lookup Bekleding_ID"
-          TopLeft="287.25,128" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output2]"
-          TopLeft="374.875,235.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-65.75"
-              Start="0,0"
-              End="0,-58.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-58.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-34.9296875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Fill Facttable\Lookup Uitvoering_ID"
-          TopLeft="287.25,27.25" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output3]"
-          TopLeft="377.25,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-58.75"
-              Start="0,0"
-              End="0,-51.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-51.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-31.4296875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Fill Facttable\Lookup Motor_ID"
-          TopLeft="552.5,25.5" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output4]"
-          TopLeft="468.25,47.375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84.25,0"
-              Start="0,0"
-              End="76.75,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="76.75,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-9.81638671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Fill Facttable\Script Prijscategorie_ID"
-          TopLeft="541.25,132.75" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output5]"
-          TopLeft="634.375,67.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.25"
-              Start="0,0"
-              End="0,57.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,23.0703125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Fill Facttable\Script Afstandscategorie"
-          TopLeft="826.25,235.5" />
-        <NodeLayout
-          Size="230,42"
-          Id="Package\Fill Facttable\Lookup Onderdeelscategorie_ID"
-          TopLeft="810.5,25.5" />
-        <NodeLayout
-          Size="187,42"
-          Id="Package\Fill Facttable\Script Momentopdeling"
-          TopLeft="1139,24.25" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output6]"
-          TopLeft="1040.5,45.875">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98.5,0"
-              Start="0,0"
-              End="91,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="91,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-2.69138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Fill Facttable\Lookup Tijdstip_ID"
-          TopLeft="1154.75,145.5" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Output 0]"
-          TopLeft="1235.625,66.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79.25"
-              Start="0,0"
-              End="0,71.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="168,42"
-          Id="Package\Fill Facttable\Lookup MixDag_ID"
-          TopLeft="1161,240" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output7]"
-          TopLeft="1241.875,187.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.5"
-              Start="0,0"
-              End="0,45">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.6953125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Fill Facttable\Lookup WagenType_ID"
-          TopLeft="1423,246.75" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output8]"
-          TopLeft="1329,264.375">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94,0"
-              Start="0,0"
-              End="86.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="86.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-4.94138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Fill Facttable\Lookup Onderdeel_ID"
-          TopLeft="1426.5,143" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output9]"
-          TopLeft="1517.5,246.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-61.75"
-              Start="0,0"
-              End="0,-54.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-54.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-32.9296875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Fill Facttable\Lookup Maatsysteem_ID"
-          TopLeft="1423.5,30" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output10]"
-          TopLeft="1519.25,143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-71"
-              Start="0,0"
-              End="0,-63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-37.5546875,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="133,42"
-          Id="Package\Fill Facttable\DWH - Fact"
-          TopLeft="1963,31.75" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Fill Facttable\Lookup Prijscategorie_ID"
-          TopLeft="535,236.25" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Output 01]"
-          TopLeft="634.625,174.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.5"
-              Start="0,0"
-              End="0,54">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output11]"
+          Id="Package\Fill Facttable.Paths[Lookup Match Output13]"
           TopLeft="732,256.875">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17538,62 +17326,80 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="217,42"
-          Id="Package\Fill Facttable\Lookup Afstandscategorie_ID"
-          TopLeft="813.75,135" />
-        <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Output 02]"
-          TopLeft="922.5,235.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,-58.5"
-              Start="0,0"
-              End="0,-51">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-51" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Fill Facttable.Paths[Lookup Match Output12]"
-          TopLeft="923.875,135">
+          TopLeft="1519.25,143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-67.5"
+              EndConnector="0,-71"
               Start="0,0"
-              End="0,-60">
+              End="0,-63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-60" />
+                    End="0,-63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-35.8046875,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,-37.5546875,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Fill Facttable\Script Totaalprijs"
-          TopLeft="1736.25,31.25" />
         <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Lookup Match Output13]"
+          Id="Package\Fill Facttable.Paths[Lookup Match Output11]"
+          TopLeft="1517.5,246.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-61.75"
+              Start="0,0"
+              End="0,-54.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-54.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-32.9296875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output10]"
+          TopLeft="1329,264.375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94,0"
+              Start="0,0"
+              End="86.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.94138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output9]"
           TopLeft="1618.5,51.625">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -17617,314 +17423,224 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill Facttable.Paths[Output 03]"
-          TopLeft="1894.25,52.5">
+          Id="Package\Fill Facttable.Paths[Lookup Match Output8]"
+          TopLeft="923.875,135">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="68.75,0"
+              EndConnector="0,-67.5"
               Start="0,0"
-              End="61.25,0">
+              End="0,-60">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="61.25,0" />
+                    End="0,-60" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-35.8046875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output7]"
+          TopLeft="1040.5,45.875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.5,0"
+              Start="0,0"
+              End="91,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-2.69138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output6]"
+          TopLeft="634.375,67.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.25"
+              Start="0,0"
+              End="0,57.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.0703125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output5]"
+          TopLeft="468.25,47.375">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.25,0"
+              Start="0,0"
+              End="76.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="76.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-9.81638671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output4]"
+          TopLeft="377.25,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-58.75"
+              Start="0,0"
+              End="0,-51.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-51.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-31.4296875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output3]"
+          TopLeft="374.875,235.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-65.75"
+              Start="0,0"
+              End="0,-58.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-58.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,-34.9296875,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output2]"
+          TopLeft="198,256.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.5,0"
+              Start="0,0"
+              End="84,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.19138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output1]"
+          TopLeft="122.25,169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.75"
+              Start="0,0"
+              End="0,58.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.3203125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fill Facttable.Paths[Lookup Match Output]"
+          TopLeft="1241.875,187.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.5"
+              Start="0,0"
+              End="0,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.6953125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Dashboards - All joined">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Kleur_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Kleur]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Taal_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Taal]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Locatie_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Locatie]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Bekleding_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Bekleding]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Uitvoering_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Uitvoering]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Motor_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Motor]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Onderdeelscategorie_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_OnderdeelsCategorie]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Tijdstip_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_MixTijdstip]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup MixDag_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_MixDag]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup WagenType_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_WagenType]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Onderdeel_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Onderdeel]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fill Facttable\Lookup Maatsysteem_ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_MaatSysteem]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Fill Facttable\DWH - Fact">
     <Properties>
@@ -17939,12 +17655,81 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Uitvoering_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Uitvoering]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup MixDag_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_MixDag]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Kleur_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Kleur]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Fill Facttable\Lookup Prijscategorie_ID">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17954,7 +17739,122 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Motor_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Motor]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup WagenType_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_WagenType]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Locatie_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Locatie]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Taal_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Taal]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Onderdeelscategorie_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_OnderdeelsCategorie]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17967,7 +17867,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17977,7 +17877,107 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Maatsysteem_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_MaatSysteem]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Tijdstip_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_MixTijdstip]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Onderdeel_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Onderdeel]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Dashboards - All joined">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fill Facttable\Lookup Bekleding_ID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Bekleding]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
